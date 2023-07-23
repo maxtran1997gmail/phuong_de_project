@@ -1,0 +1,13 @@
+2023-07-22 20:51:50,209 INFO audit.Log4jAuditLogger: session=0x10000020b2b0000	user=127.0.0.1	ip=127.0.0.1	operation=setData	znode=/latest_producer_id_block	result=success
+2023-07-22 20:57:11,938 ERROR audit.Log4jAuditLogger: session=0x10000020b2b0000	user=127.0.0.1	ip=127.0.0.1	operation=setData	znode=/config/topics/_schemas	result=failure
+2023-07-22 20:57:11,950 INFO audit.Log4jAuditLogger: session=0x10000020b2b0000	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/config/topics/_schemas	znode_type=persistent	result=success
+2023-07-22 20:57:11,957 INFO audit.Log4jAuditLogger: session=0x10000020b2b0000	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/brokers/topics/_schemas	znode_type=persistent	result=success
+2023-07-22 20:57:11,980 INFO audit.Log4jAuditLogger: session=0x10000020b2b0000	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/brokers/topics/_schemas/partitions	znode_type=persistent	result=success
+2023-07-22 20:57:11,984 INFO audit.Log4jAuditLogger: session=0x10000020b2b0000	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/brokers/topics/_schemas/partitions/0	znode_type=persistent	result=success
+2023-07-22 20:57:11,988 INFO audit.Log4jAuditLogger: session=0x10000020b2b0000	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/brokers/topics/_schemas/partitions/0/state	znode_type=persistent	result=success
+2023-07-22 20:57:12,298 ERROR audit.Log4jAuditLogger: session=0x10000020b2b0000	user=127.0.0.1	ip=127.0.0.1	operation=setData	znode=/config/topics/_schema_encoders	result=failure
+2023-07-22 20:57:12,301 INFO audit.Log4jAuditLogger: session=0x10000020b2b0000	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/config/topics/_schema_encoders	znode_type=persistent	result=success
+2023-07-22 20:57:12,304 INFO audit.Log4jAuditLogger: session=0x10000020b2b0000	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/brokers/topics/_schema_encoders	znode_type=persistent	result=success
+2023-07-22 20:57:12,310 INFO audit.Log4jAuditLogger: session=0x10000020b2b0000	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/brokers/topics/_schema_encoders/partitions	znode_type=persistent	result=success
+2023-07-22 20:57:12,315 INFO audit.Log4jAuditLogger: session=0x10000020b2b0000	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/brokers/topics/_schema_encoders/partitions/0	znode_type=persistent	result=success
+2023-07-22 20:57:12,319 INFO audit.Log4jAuditLogger: session=0x10000020b2b0000	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/brokers/topics/_schema_encoders/partitions/0/state	znode_type=persistent	result=success

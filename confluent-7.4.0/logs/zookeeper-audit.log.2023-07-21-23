@@ -1,0 +1,12 @@
+2023-07-21 23:45:13,757 ERROR audit.Log4jAuditLogger: session=0x1000008cf480000	user=127.0.0.1	ip=127.0.0.1	operation=setData	znode=/config/topics/BTC_Json	result=failure
+2023-07-21 23:45:13,781 INFO audit.Log4jAuditLogger: session=0x1000008cf480000	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/config/topics/BTC_Json	znode_type=persistent	result=success
+2023-07-21 23:45:13,786 INFO audit.Log4jAuditLogger: session=0x1000008cf480000	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/brokers/topics/BTC_Json	znode_type=persistent	result=success
+2023-07-21 23:45:13,804 INFO audit.Log4jAuditLogger: session=0x1000008cf480000	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/brokers/topics/BTC_Json/partitions	znode_type=persistent	result=success
+2023-07-21 23:45:13,808 INFO audit.Log4jAuditLogger: session=0x1000008cf480000	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/brokers/topics/BTC_Json/partitions/0	znode_type=persistent	result=success
+2023-07-21 23:45:13,811 INFO audit.Log4jAuditLogger: session=0x1000008cf480000	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/brokers/topics/BTC_Json/partitions/0/state	znode_type=persistent	result=success
+2023-07-21 23:46:11,573 ERROR audit.Log4jAuditLogger: session=0x1000008cf480000	user=127.0.0.1	ip=127.0.0.1	operation=setData	znode=/config/topics/BTC_son	result=failure
+2023-07-21 23:46:11,575 INFO audit.Log4jAuditLogger: session=0x1000008cf480000	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/config/topics/BTC_son	znode_type=persistent	result=success
+2023-07-21 23:46:11,577 INFO audit.Log4jAuditLogger: session=0x1000008cf480000	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/brokers/topics/BTC_son	znode_type=persistent	result=success
+2023-07-21 23:46:11,581 INFO audit.Log4jAuditLogger: session=0x1000008cf480000	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/brokers/topics/BTC_son/partitions	znode_type=persistent	result=success
+2023-07-21 23:46:11,584 INFO audit.Log4jAuditLogger: session=0x1000008cf480000	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/brokers/topics/BTC_son/partitions/0	znode_type=persistent	result=success
+2023-07-21 23:46:11,587 INFO audit.Log4jAuditLogger: session=0x1000008cf480000	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/brokers/topics/BTC_son/partitions/0/state	znode_type=persistent	result=success

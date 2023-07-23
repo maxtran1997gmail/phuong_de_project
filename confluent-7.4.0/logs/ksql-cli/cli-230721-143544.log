@@ -1,0 +1,2 @@
+[2023-07-21 14:35:45,347] ERROR The supplied serverAddress is invalid: httpl://localhost:8088
+Caused by: unknown protocol: httpl (io.confluent.ksql.Ksql:82)

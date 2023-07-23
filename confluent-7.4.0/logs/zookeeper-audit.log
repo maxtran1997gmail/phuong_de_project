@@ -1,0 +1,12 @@
+2023-07-22 22:09:45,739 INFO audit.Log4jAuditLogger: session=0x10000020b2b0001	user=tmph2003	operation=ephemeralZNodeDeletionOnSessionCloseOrExpire	znode=/controller	result=success
+2023-07-22 22:09:45,741 INFO audit.Log4jAuditLogger: session=0x10000020b2b0001	user=tmph2003	operation=ephemeralZNodeDeletionOnSessionCloseOrExpire	znode=/brokers/ids/0	result=success
+2023-07-22 22:09:47,118 INFO audit.Log4jAuditLogger: session=0x10000020b2b0002	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/brokers/ids/0	znode_type=ephemeral	result=success
+2023-07-22 22:09:47,119 INFO audit.Log4jAuditLogger: session=0x10000020b2b0002	user=127.0.0.1	ip=127.0.0.1	operation=setData	znode=/brokers/ids/0	result=success
+2023-07-22 22:09:47,173 INFO audit.Log4jAuditLogger: session=0x10000020b2b0002	user=127.0.0.1	ip=127.0.0.1	operation=delete	znode=/config/changes/config_change_0000000001	result=success
+2023-07-22 22:09:47,218 INFO audit.Log4jAuditLogger: session=0x10000020b2b0002	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/controller	znode_type=ephemeral	result=success
+2023-07-22 22:09:47,218 INFO audit.Log4jAuditLogger: session=0x10000020b2b0002	user=127.0.0.1	ip=127.0.0.1	operation=setData	znode=/controller_epoch	result=success
+2023-07-22 22:09:47,729 ERROR audit.Log4jAuditLogger: session=0x10000020b2b0002	user=127.0.0.1	ip=127.0.0.1	operation=multiOperation	result=failure
+2023-07-22 22:09:48,706 INFO audit.Log4jAuditLogger: session=0x10000020b2b0002	user=127.0.0.1	ip=127.0.0.1	operation=setData	znode=/config/topics/_confluent_balancer_api_state	result=success
+2023-07-22 22:09:48,717 ERROR audit.Log4jAuditLogger: session=0x10000020b2b0002	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/config/changes	znode_type=persistent	result=failure
+2023-07-22 22:09:48,729 INFO audit.Log4jAuditLogger: session=0x10000020b2b0002	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/config/changes/config_change_0000000002	znode_type=persistent_sequential	result=success
+2023-07-22 22:22:00,289 INFO audit.Log4jAuditLogger: user=tmph2003	operation=serverStop	result=invoked

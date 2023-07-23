@@ -1,0 +1,6 @@
+2023-07-21 20:32:46,931 ERROR audit.Log4jAuditLogger: session=0x1000008cf480000	user=127.0.0.1	ip=127.0.0.1	operation=setData	znode=/config/topics/TARGET_AVRO	result=failure
+2023-07-21 20:32:46,942 INFO audit.Log4jAuditLogger: session=0x1000008cf480000	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/config/topics/TARGET_AVRO	znode_type=persistent	result=success
+2023-07-21 20:32:46,947 INFO audit.Log4jAuditLogger: session=0x1000008cf480000	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/brokers/topics/TARGET_AVRO	znode_type=persistent	result=success
+2023-07-21 20:32:46,962 INFO audit.Log4jAuditLogger: session=0x1000008cf480000	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/brokers/topics/TARGET_AVRO/partitions	znode_type=persistent	result=success
+2023-07-21 20:32:46,967 INFO audit.Log4jAuditLogger: session=0x1000008cf480000	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/brokers/topics/TARGET_AVRO/partitions/0	znode_type=persistent	result=success
+2023-07-21 20:32:46,970 INFO audit.Log4jAuditLogger: session=0x1000008cf480000	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/brokers/topics/TARGET_AVRO/partitions/0/state	znode_type=persistent	result=success

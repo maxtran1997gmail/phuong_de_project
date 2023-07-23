@@ -1,0 +1,24 @@
+2023-07-21 22:06:28,117 ERROR audit.Log4jAuditLogger: session=0x1000008cf480001	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/consumers	znode_type=persistent	result=failure
+2023-07-21 22:06:28,141 ERROR audit.Log4jAuditLogger: session=0x1000008cf480001	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/brokers/ids	znode_type=persistent	result=failure
+2023-07-21 22:06:28,147 ERROR audit.Log4jAuditLogger: session=0x1000008cf480001	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/brokers/topics	znode_type=persistent	result=failure
+2023-07-21 22:06:28,151 ERROR audit.Log4jAuditLogger: session=0x1000008cf480001	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/config/changes	znode_type=persistent	result=failure
+2023-07-21 22:06:28,155 ERROR audit.Log4jAuditLogger: session=0x1000008cf480001	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/admin/delete_topics	znode_type=persistent	result=failure
+2023-07-21 22:06:28,159 ERROR audit.Log4jAuditLogger: session=0x1000008cf480001	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/brokers/seqid	znode_type=persistent	result=failure
+2023-07-21 22:06:28,163 ERROR audit.Log4jAuditLogger: session=0x1000008cf480001	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/isr_change_notification	znode_type=persistent	result=failure
+2023-07-21 22:06:28,167 ERROR audit.Log4jAuditLogger: session=0x1000008cf480001	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/latest_producer_id_block	znode_type=persistent	result=failure
+2023-07-21 22:06:28,171 ERROR audit.Log4jAuditLogger: session=0x1000008cf480001	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/log_dir_event_notification	znode_type=persistent	result=failure
+2023-07-21 22:06:28,174 ERROR audit.Log4jAuditLogger: session=0x1000008cf480001	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/leadership_priority	znode_type=persistent	result=failure
+2023-07-21 22:06:28,177 ERROR audit.Log4jAuditLogger: session=0x1000008cf480001	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/tenants	znode_type=persistent	result=failure
+2023-07-21 22:06:28,179 ERROR audit.Log4jAuditLogger: session=0x1000008cf480001	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/cells	znode_type=persistent	result=failure
+2023-07-21 22:06:28,182 ERROR audit.Log4jAuditLogger: session=0x1000008cf480001	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/config/topics	znode_type=persistent	result=failure
+2023-07-21 22:06:28,185 ERROR audit.Log4jAuditLogger: session=0x1000008cf480001	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/config/clients	znode_type=persistent	result=failure
+2023-07-21 22:06:28,188 ERROR audit.Log4jAuditLogger: session=0x1000008cf480001	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/config/users	znode_type=persistent	result=failure
+2023-07-21 22:06:28,190 ERROR audit.Log4jAuditLogger: session=0x1000008cf480001	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/config/brokers	znode_type=persistent	result=failure
+2023-07-21 22:06:28,193 ERROR audit.Log4jAuditLogger: session=0x1000008cf480001	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/config/ips	znode_type=persistent	result=failure
+2023-07-21 22:06:28,196 ERROR audit.Log4jAuditLogger: session=0x1000008cf480001	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/config/cluster-links	znode_type=persistent	result=failure
+2023-07-21 22:40:26,273 ERROR audit.Log4jAuditLogger: session=0x1000008cf480000	user=127.0.0.1	ip=127.0.0.1	operation=setData	znode=/config/topics/QUERYABLE_TABLE_AVRO	result=failure
+2023-07-21 22:40:26,281 INFO audit.Log4jAuditLogger: session=0x1000008cf480000	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/config/topics/QUERYABLE_TABLE_AVRO	znode_type=persistent	result=success
+2023-07-21 22:40:26,285 INFO audit.Log4jAuditLogger: session=0x1000008cf480000	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/brokers/topics/QUERYABLE_TABLE_AVRO	znode_type=persistent	result=success
+2023-07-21 22:40:26,311 INFO audit.Log4jAuditLogger: session=0x1000008cf480000	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/brokers/topics/QUERYABLE_TABLE_AVRO/partitions	znode_type=persistent	result=success
+2023-07-21 22:40:26,315 INFO audit.Log4jAuditLogger: session=0x1000008cf480000	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/brokers/topics/QUERYABLE_TABLE_AVRO/partitions/0	znode_type=persistent	result=success
+2023-07-21 22:40:26,319 INFO audit.Log4jAuditLogger: session=0x1000008cf480000	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/brokers/topics/QUERYABLE_TABLE_AVRO/partitions/0/state	znode_type=persistent	result=success

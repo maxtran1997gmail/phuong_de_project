@@ -1,0 +1,22 @@
+2023-07-21 16:45:57,297 INFO audit.Log4jAuditLogger: session=0x1000008cf480000	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/admin/delete_topics/BTC_Avro	znode_type=persistent	result=success
+2023-07-21 16:45:57,352 INFO audit.Log4jAuditLogger: session=0x1000008cf480000	user=127.0.0.1	ip=127.0.0.1	operation=setData	znode=/brokers/topics/BTC_Avro/partitions/0/state	result=success
+2023-07-21 16:45:57,404 INFO audit.Log4jAuditLogger: session=0x1000008cf480000	user=127.0.0.1	ip=127.0.0.1	operation=delete	znode=/brokers/topics/BTC_Avro/partitions/0/state	result=success
+2023-07-21 16:45:57,406 INFO audit.Log4jAuditLogger: session=0x1000008cf480000	user=127.0.0.1	ip=127.0.0.1	operation=delete	znode=/brokers/topics/BTC_Avro/partitions/0	result=success
+2023-07-21 16:45:57,408 INFO audit.Log4jAuditLogger: session=0x1000008cf480000	user=127.0.0.1	ip=127.0.0.1	operation=delete	znode=/brokers/topics/BTC_Avro/partitions	result=success
+2023-07-21 16:45:57,411 INFO audit.Log4jAuditLogger: session=0x1000008cf480000	user=127.0.0.1	ip=127.0.0.1	operation=delete	znode=/brokers/topics/BTC_Avro	result=success
+2023-07-21 16:45:57,414 INFO audit.Log4jAuditLogger: session=0x1000008cf480000	user=127.0.0.1	ip=127.0.0.1	operation=delete	znode=/config/topics/BTC_Avro	result=success
+2023-07-21 16:45:57,417 INFO audit.Log4jAuditLogger: session=0x1000008cf480000	user=127.0.0.1	ip=127.0.0.1	operation=delete	znode=/admin/delete_topics/BTC_Avro	result=success
+2023-07-21 16:48:38,979 ERROR audit.Log4jAuditLogger: session=0x1000008cf480000	user=127.0.0.1	ip=127.0.0.1	operation=setData	znode=/config/topics/BTC_Avro	result=failure
+2023-07-21 16:48:38,983 INFO audit.Log4jAuditLogger: session=0x1000008cf480000	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/config/topics/BTC_Avro	znode_type=persistent	result=success
+2023-07-21 16:48:38,986 INFO audit.Log4jAuditLogger: session=0x1000008cf480000	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/brokers/topics/BTC_Avro	znode_type=persistent	result=success
+2023-07-21 16:48:38,996 INFO audit.Log4jAuditLogger: session=0x1000008cf480000	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/brokers/topics/BTC_Avro/partitions	znode_type=persistent	result=success
+2023-07-21 16:48:38,999 INFO audit.Log4jAuditLogger: session=0x1000008cf480000	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/brokers/topics/BTC_Avro/partitions/0	znode_type=persistent	result=success
+2023-07-21 16:48:39,002 INFO audit.Log4jAuditLogger: session=0x1000008cf480000	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/brokers/topics/BTC_Avro/partitions/0/state	znode_type=persistent	result=success
+2023-07-21 16:50:20,792 INFO audit.Log4jAuditLogger: session=0x1000008cf480000	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/admin/delete_topics/mysql_users_avro	znode_type=persistent	result=success
+2023-07-21 16:50:20,798 INFO audit.Log4jAuditLogger: session=0x1000008cf480000	user=127.0.0.1	ip=127.0.0.1	operation=setData	znode=/brokers/topics/mysql_users_avro/partitions/0/state	result=success
+2023-07-21 16:50:20,823 INFO audit.Log4jAuditLogger: session=0x1000008cf480000	user=127.0.0.1	ip=127.0.0.1	operation=delete	znode=/brokers/topics/mysql_users_avro/partitions/0/state	result=success
+2023-07-21 16:50:20,825 INFO audit.Log4jAuditLogger: session=0x1000008cf480000	user=127.0.0.1	ip=127.0.0.1	operation=delete	znode=/brokers/topics/mysql_users_avro/partitions/0	result=success
+2023-07-21 16:50:20,828 INFO audit.Log4jAuditLogger: session=0x1000008cf480000	user=127.0.0.1	ip=127.0.0.1	operation=delete	znode=/brokers/topics/mysql_users_avro/partitions	result=success
+2023-07-21 16:50:20,830 INFO audit.Log4jAuditLogger: session=0x1000008cf480000	user=127.0.0.1	ip=127.0.0.1	operation=delete	znode=/brokers/topics/mysql_users_avro	result=success
+2023-07-21 16:50:20,832 INFO audit.Log4jAuditLogger: session=0x1000008cf480000	user=127.0.0.1	ip=127.0.0.1	operation=delete	znode=/config/topics/mysql_users_avro	result=success
+2023-07-21 16:50:20,834 INFO audit.Log4jAuditLogger: session=0x1000008cf480000	user=127.0.0.1	ip=127.0.0.1	operation=delete	znode=/admin/delete_topics/mysql_users_avro	result=success

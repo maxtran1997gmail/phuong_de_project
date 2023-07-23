@@ -1,0 +1,786 @@
+[2023-07-20 16:47:58,719] INFO Registering metric ActiveBalancerCount (io.confluent.databalancer.KafkaDataBalanceManager)
+[2023-07-20 16:47:58,895] INFO Scheduling SBC Election (io.confluent.databalancer.SbcDataBalanceManager)
+[2023-07-20 16:47:58,899] INFO Handling event SbcZkStartupEvent-1 (io.confluent.databalancer.event.SbcEvent)
+[2023-07-20 16:47:58,899] INFO Balancer Status state for brokers [0] transitioned from BALANCER_EVENT_RECEIVED to STARTING due to event INITIALIZING_CRUISE_CONTROL. (io.confluent.databalancer.operation.StateMachine)
+[2023-07-20 16:47:58,900] INFO DataBalancer: Activating SBC with AliveBrokersSnapshot{liveBrokerIdsAndEpochs={0=29}, brokerReplicaExclusions=[], demotedBrokers=[]} (io.confluent.databalancer.KafkaDataBalanceManager)
+[2023-07-20 16:47:58,901] INFO DataBalancer: Scheduling DataBalanceEngine Startup (io.confluent.databalancer.ConfluentDataBalanceEngine)
+[2023-07-20 16:47:58,912] INFO DataBalancer: Bootstrap server endpoint is Endpoint(listenerName='PLAINTEXT', securityProtocol=PLAINTEXT, host='localhost', port=9092) (io.confluent.databalancer.startup.CruiseControlStartable)
+[2023-07-20 16:47:58,914] INFO DataBalancer: BOOTSTRAP_SERVERS determined to be localhost:9092 (io.confluent.databalancer.startup.CruiseControlStartable)
+[2023-07-20 16:47:58,969] INFO KafkaCruiseControlConfig values: 
+	anomaly.detection.allow.capacity.estimation = true
+	anomaly.detection.goals = [io.confluent.cruisecontrol.analyzer.goals.ReplicaPlacementGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.RackAwareGoal, io.confluent.cruisecontrol.analyzer.goals.MaxReplicaMovementParallelismGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.ReplicaCapacityGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.DiskCapacityGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.NetworkInboundCapacityGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.NetworkOutboundCapacityGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.ProducerInboundCapacityGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.ReplicaDistributionGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.DiskUsageDistributionGoal]
+	anomaly.detection.interval.ms = 60000
+	anomaly.notifier.class = class com.linkedin.kafka.cruisecontrol.detector.notifier.SelfHealingNotifier
+	bootstrap.servers = [localhost:9092]
+	broker.capacity.config.resolver.class = class com.linkedin.kafka.cruisecontrol.config.BrokerCapacityResolver
+	broker.failure.alert.threshold.ms = 0
+	broker.failure.exclude.recently.removed.brokers = true
+	broker.failure.self.healing.threshold.ms = 3600000
+	broker.metric.sample.aggregator.completeness.cache.size = 5
+	broker.metric.sample.store.topic = _confluent_balancer_broker_samples
+	broker.metrics.window.ms = 360000
+	broker.removal.shutdown.timeout.ms = 600000
+	broker.replica.exclusion.timeout.ms = 120000
+	bytes.cpu.contribution.weight = 0.2
+	calculated.throttle.ratio = 0.8
+	cdbe.shutdown.wait.ms = 15000
+	client.id = kafka-cruise-control
+	connections.max.idle.ms = 540000
+	cpu.balance.threshold = 1.1
+	cpu.capacity.threshold = 1.0
+	cpu.low.utilization.threshold = 0.2
+	cpu.utilization.detector.duration.ms = 600000
+	cpu.utilization.detector.overutilization.threshold = 80.0
+	cpu.utilization.detector.underutilization.threshold = 50.0
+	default.api.timeout.ms = 60000
+	default.replica.movement.strategies = [com.linkedin.kafka.cruisecontrol.executor.strategy.BaseReplicaMovementStrategy]
+	describe.broker.exclusion.timeout.ms = 60000
+	describe.cluster.response.timeout.ms = 30000
+	describe.configs.batch.size = 1000
+	describe.configs.response.timeout.ms = 30000
+	describe.topics.response.timeout.ms = 30000
+	disk.balance.threshold = 1.1
+	disk.low.utilization.threshold = 0.2
+	disk.max.load = 0.85
+	disk.min.free.space.gb = 0
+	disk.read.ratio = 0.2
+	disk.utilization.detector.duration.ms = 600000
+	disk.utilization.detector.overutilization.threshold = 80.0
+	disk.utilization.detector.reserved.capacity = 150000.0
+	disk.utilization.detector.underutilization.threshold = 35.0
+	execution.progress.check.interval.ms = 7000
+	executor.leader.action.timeout.ms = 180000
+	executor.notifier.class = class com.linkedin.kafka.cruisecontrol.executor.ExecutorNoopNotifier
+	executor.reservation.refresh.time.ms = 60000
+	follower.network.inbound.weight.for.cpu.util = 0.15
+	goal.balancedness.priority.weight = 1.1
+	goal.balancedness.strictness.weight = 1.5
+	goal.violation.delay.on.new.brokers.ms = 1800000
+	goal.violation.distribution.threshold.multiplier = 1.1
+	goal.violation.exclude.recently.removed.brokers = true
+	goals = [com.linkedin.kafka.cruisecontrol.analyzer.goals.MovementExclusionGoal, io.confluent.cruisecontrol.analyzer.goals.ReplicaPlacementGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.RackAwareGoal, io.confluent.cruisecontrol.analyzer.goals.MaxReplicaMovementParallelismGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.ReplicaCapacityGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.DiskCapacityGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.NetworkInboundCapacityGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.NetworkOutboundCapacityGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.ProducerInboundCapacityGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.SystemTopicEvenDistributionGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.ReplicaDistributionGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.DiskUsageDistributionGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.LeaderReplicaDistributionGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.NetworkInboundUsageDistributionGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.NetworkOutboundUsageDistributionGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.CpuUsageDistributionGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.TopicReplicaDistributionGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.LeaderBytesInDistributionGoal]
+	hot.partition.capacity.utilization.threshold = 0.2
+	incremental.balancing.cpu.top.proposal.tracking.enabled = false
+	incremental.balancing.cpu.top.proposal.tracking.num.proposals = 15
+	incremental.balancing.enabled = false
+	incremental.balancing.goals = [com.linkedin.kafka.cruisecontrol.analyzer.goals.MovementExclusionGoal, io.confluent.cruisecontrol.analyzer.goals.ReplicaPlacementGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.RackAwareGoal, io.confluent.cruisecontrol.analyzer.goals.MaxReplicaMovementParallelismGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.ReplicaCapacityGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.DiskCapacityGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.NetworkInboundCapacityGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.NetworkOutboundCapacityGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.ProducerInboundCapacityGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.IncrementalCPUResourceDistributionGoal]
+	incremental.balancing.lower.bound = 0.02
+	incremental.balancing.step.ratio = 0.2
+	intra.broker.goals = [com.linkedin.kafka.cruisecontrol.analyzer.goals.IntraBrokerDiskCapacityGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.IntraBrokerDiskUsageDistributionGoal]
+	invalid.replica.assignment.retry.timeout.ms = 300000
+	leader.network.inbound.weight.for.cpu.util = 0.7
+	leader.network.outbound.weight.for.cpu.util = 0.15
+	leader.replica.count.balance.threshold = 1.1
+	logdir.response.timeout.ms = 30000
+	max.allowed.extrapolations.per.broker = 5
+	max.allowed.extrapolations.per.partition = 5
+	max.capacity.balancing.delta.percentage = 0.0
+	max.replicas = 2147483647
+	max.volume.throughput.mb = 0
+	metadata.client.timeout.ms = 180000
+	metadata.ttl = 10000
+	metric.sampler.class = class io.confluent.cruisecontrol.metricsreporter.ConfluentTelemetryReporterSampler
+	metric.sampler.partition.assignor.class = class com.linkedin.kafka.cruisecontrol.monitor.sampling.DefaultMetricSamplerPartitionAssignor
+	metric.sampling.interval.ms = 180000
+	min.samples.per.broker.metrics.window = 1
+	min.samples.per.partition.metrics.window = 1
+	min.valid.partition.ratio = 0.95
+	network.in.max.bytes.per.second = 9223372036854775807
+	network.inbound.balance.threshold = 1.1
+	network.inbound.capacity.threshold = 0.8
+	network.inbound.low.utilization.threshold = 0.2
+	network.out.max.bytes.per.second = 9223372036854775807
+	network.outbound.balance.threshold = 1.1
+	network.outbound.capacity.threshold = 0.8
+	network.outbound.low.utilization.threshold = 0.2
+	num.broker.metrics.windows = 20
+	num.cached.recent.anomaly.states = 10
+	num.concurrent.intra.broker.partition.movements = 2
+	num.concurrent.leader.movements = 1000
+	num.concurrent.partition.movements.per.broker = 5
+	num.metric.fetchers = 1
+	num.partition.metrics.windows = 6
+	partition.metric.sample.aggregator.completeness.cache.size = 5
+	partition.metric.sample.store.topic = _confluent_balancer_partition_samples
+	partition.metrics.window.ms = 360000
+	plan.computation.retry.timeout.ms = 3600000
+	producer.in.max.bytes.per.second = 9223372036854775807
+	producer.inbound.capacity.threshold = 0.9
+	read.throughput.multiplier = 1.0
+	receive.buffer.bytes = 32768
+	reconnect.backoff.ms = 50
+	removal.history.retention.time.ms = 86400000
+	replica.count.balance.threshold = 1.1
+	replica.movement.strategies = [com.linkedin.kafka.cruisecontrol.executor.strategy.PostponeUrpReplicaMovementStrategy, com.linkedin.kafka.cruisecontrol.executor.strategy.PrioritizeLargeReplicaMovementStrategy, com.linkedin.kafka.cruisecontrol.executor.strategy.PrioritizeSmallReplicaMovementStrategy, com.linkedin.kafka.cruisecontrol.executor.strategy.BaseReplicaMovementStrategy]
+	request.cpu.contribution.weight = 0.8
+	request.timeout.ms = 30000
+	resource.utilization.detector.enabled = false
+	resource.utilization.detector.interval.ms = 60000
+	sampling.allow.cpu.capacity.estimation = true
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	self.healing.broker.failure.enabled = true
+	self.healing.goal.violation.enabled = false
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	startup.retry.delay.minutes = 5
+	startup.retry.max.hours = 2
+	static.throttle.rate.override.enabled = false
+	throttle.bytes.per.second = 10485760
+	topic.partition.maximum.movements = 5
+	topic.partition.movement.expiration.ms = 3600000
+	topic.partition.suspension.ms = 10800000
+	topic.replica.count.balance.threshold = 3.0
+	topics.excluded.from.partition.movement = 
+	write.throughput.multiplier = 1.0
+	zookeeper.connect = localhost:2181
+	zookeeper.security.enabled = false
+ (com.linkedin.kafka.cruisecontrol.config.KafkaCruiseControlConfig)
+[2023-07-20 16:47:58,973] INFO DataBalancer: Instantiating DataBalanceEngine (io.confluent.databalancer.ConfluentDataBalanceEngine)
+[2023-07-20 16:47:58,976] INFO DataBalancer: Checking startup components (io.confluent.databalancer.startup.CruiseControlStartable)
+[2023-07-20 16:47:58,977] INFO DataBalancer: Checking startup component StartupComponent ConfluentTelemetryReporterSampler (io.confluent.databalancer.startup.StartupComponents)
+[2023-07-20 16:48:00,255] INFO Waiting for 1 seconds for metric reporter topic _confluent-telemetry-metrics to become available. (io.confluent.cruisecontrol.metricsreporter.ConfluentMetricsSamplerBase)
+[2023-07-20 16:48:01,260] INFO Waiting for 2 seconds for metric reporter topic _confluent-telemetry-metrics to become available. (io.confluent.cruisecontrol.metricsreporter.ConfluentMetricsSamplerBase)
+[2023-07-20 16:48:03,262] INFO Waiting for 4 seconds for metric reporter topic _confluent-telemetry-metrics to become available. (io.confluent.cruisecontrol.metricsreporter.ConfluentMetricsSamplerBase)
+[2023-07-20 16:48:07,264] INFO Waiting for 8 seconds for metric reporter topic _confluent-telemetry-metrics to become available. (io.confluent.cruisecontrol.metricsreporter.ConfluentMetricsSamplerBase)
+[2023-07-20 16:48:15,266] INFO Waiting for 16 seconds for metric reporter topic _confluent-telemetry-metrics to become available. (io.confluent.cruisecontrol.metricsreporter.ConfluentMetricsSamplerBase)
+[2023-07-20 16:48:31,269] INFO Waiting for 32 seconds for metric reporter topic _confluent-telemetry-metrics to become available. (io.confluent.cruisecontrol.metricsreporter.ConfluentMetricsSamplerBase)
+[2023-07-20 16:49:03,272] INFO Metric Reporter Sampler ready to start. (io.confluent.cruisecontrol.metricsreporter.ConfluentMetricsSamplerBase)
+[2023-07-20 16:49:03,272] INFO DataBalancer: Startup component StartupComponent ConfluentTelemetryReporterSampler ready to proceed (io.confluent.databalancer.startup.StartupComponents)
+[2023-07-20 16:49:03,272] INFO DataBalancer: Checking startup component StartupComponent SampleStoreTopicCleanUp (io.confluent.databalancer.startup.StartupComponents)
+[2023-07-20 16:49:03,280] INFO DataBalancer: No topics to be deleted. (com.linkedin.kafka.cruisecontrol.SbkTopicUtils)
+[2023-07-20 16:49:03,282] INFO DataBalancer: Startup component StartupComponent SampleStoreTopicCleanUp ready to proceed (io.confluent.databalancer.startup.StartupComponents)
+[2023-07-20 16:49:03,282] INFO DataBalancer: Checking startup component StartupComponent ApiStatePersistenceStore (io.confluent.databalancer.startup.StartupComponents)
+[2023-07-20 16:49:03,290] INFO DataBalancer: Creating topic _confluent_balancer_api_state  (com.linkedin.kafka.cruisecontrol.SbkTopicUtils)
+[2023-07-20 16:49:03,339] INFO Waiting for 1 seconds to ensure that api persistent store topic is created/exists. (io.confluent.databalancer.persistence.ApiStatePersistenceStore)
+[2023-07-20 16:49:04,348] INFO DataBalancer: Adjusting topic _confluent_balancer_api_state configuration (com.linkedin.kafka.cruisecontrol.SbkTopicUtils)
+[2023-07-20 16:49:04,381] INFO Confirmed that topic _confluent_balancer_api_state exists. (io.confluent.databalancer.persistence.ApiStatePersistenceStore)
+[2023-07-20 16:49:04,381] INFO DataBalancer: Startup component StartupComponent ApiStatePersistenceStore ready to proceed (io.confluent.databalancer.startup.StartupComponents)
+[2023-07-20 16:49:04,381] INFO DataBalancer: Startup checking succeeded, proceeding to full validation. (io.confluent.databalancer.startup.StartupComponents)
+[2023-07-20 16:49:04,381] INFO DataBalancer: Creating CruiseControl (io.confluent.databalancer.startup.CruiseControlStartable)
+[2023-07-20 16:49:04,402] INFO DataBalancer: Bootstrap server endpoint is Endpoint(listenerName='PLAINTEXT', securityProtocol=PLAINTEXT, host='localhost', port=9092) (io.confluent.databalancer.startup.CruiseControlStartable)
+[2023-07-20 16:49:04,432] INFO Started DataBalancer Api State Persistence Store (io.confluent.databalancer.persistence.ApiStatePersistenceStore)
+[2023-07-20 16:49:04,432] INFO Starting Kafka Cruise Control... (com.linkedin.kafka.cruisecontrol.KafkaCruiseControl)
+[2023-07-20 16:49:04,435] INFO Initializing DataBalancer with goals UpdatableSbcGoalsConfig{rebalancingGoals=GoalsConfig{requirements=(requiredNumWindows=3, minMonitoredPartitionPercentage=0.950, includedAllTopics=true, fetchTopicPlacements=true), goals=[MovementExclusionGoal, ReplicaPlacementGoal, RackAwareGoal, MaxReplicaMovementParallelismGoal, ReplicaCapacityGoal, DiskCapacityGoal, NetworkInboundCapacityGoal, NetworkOutboundCapacityGoal, ProducerInboundCapacityGoal, SystemTopicEvenDistributionGoal, ReplicaDistributionGoal, DiskUsageDistributionGoal, LeaderReplicaDistributionGoal, NetworkInboundUsageDistributionGoal, NetworkOutboundUsageDistributionGoal, CpuUsageDistributionGoal, TopicReplicaDistributionGoal, LeaderBytesInDistributionGoal]}, triggeringGoals=GoalsConfig{requirements=(requiredNumWindows=1, minMonitoredPartitionPercentage=0.950, includedAllTopics=true, fetchTopicPlacements=true), goals=[ReplicaPlacementGoal, RackAwareGoal, MaxReplicaMovementParallelismGoal, ReplicaCapacityGoal, DiskCapacityGoal, NetworkInboundCapacityGoal, NetworkOutboundCapacityGoal, ProducerInboundCapacityGoal, ReplicaDistributionGoal, DiskUsageDistributionGoal]}, incrementalBalancingEnabled=false, incrementalBalancingGoals=GoalsConfig{requirements=(requiredNumWindows=1, minMonitoredPartitionPercentage=0.950, includedAllTopics=true, fetchTopicPlacements=true), goals=[MovementExclusionGoal, ReplicaPlacementGoal, RackAwareGoal, MaxReplicaMovementParallelismGoal, ReplicaCapacityGoal, DiskCapacityGoal, NetworkInboundCapacityGoal, NetworkOutboundCapacityGoal, ProducerInboundCapacityGoal, IncrementalCPUResourceDistributionGoal]}} (com.linkedin.kafka.cruisecontrol.KafkaCruiseControl)
+[2023-07-20 16:49:04,442] INFO CruiseControl: Attempting to configure Broker Capacity from config properties (com.linkedin.kafka.cruisecontrol.config.BrokerCapacityResolver)
+[2023-07-20 16:49:04,444] INFO CruiseControl: Attempting to configure Broker Capacity from config properties (com.linkedin.kafka.cruisecontrol.config.BrokerCapacityResolver)
+[2023-07-20 16:49:04,511] INFO Set throttle rate 10485760. Will not override static throttles when setting the rate. (com.linkedin.kafka.cruisecontrol.executor.ReplicationThrottleHelper)
+[2023-07-20 16:49:04,532] INFO Removed throttled replicas config for topics: [_confluent_balancer_api_state, _confluent-command, _confluent-telemetry-metrics] (com.linkedin.kafka.cruisecontrol.executor.ReplicationThrottleHelper)
+[2023-07-20 16:49:04,546] INFO Removed throttle rate config from 0 brokers (com.linkedin.kafka.cruisecontrol.executor.ReplicationThrottleHelper)
+[2023-07-20 16:49:04,549] INFO KafkaCruiseControlConfig values: 
+	anomaly.detection.allow.capacity.estimation = true
+	anomaly.detection.goals = [io.confluent.cruisecontrol.analyzer.goals.ReplicaPlacementGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.RackAwareGoal, io.confluent.cruisecontrol.analyzer.goals.MaxReplicaMovementParallelismGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.ReplicaCapacityGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.DiskCapacityGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.NetworkInboundCapacityGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.NetworkOutboundCapacityGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.ProducerInboundCapacityGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.ReplicaDistributionGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.DiskUsageDistributionGoal]
+	anomaly.detection.interval.ms = 60000
+	anomaly.notifier.class = class com.linkedin.kafka.cruisecontrol.detector.notifier.SelfHealingNotifier
+	bootstrap.servers = [localhost:9092]
+	broker.capacity.config.resolver.class = class com.linkedin.kafka.cruisecontrol.config.BrokerCapacityResolver
+	broker.failure.alert.threshold.ms = 0
+	broker.failure.exclude.recently.removed.brokers = true
+	broker.failure.self.healing.threshold.ms = 3600000
+	broker.metric.sample.aggregator.completeness.cache.size = 5
+	broker.metric.sample.store.topic = _confluent_balancer_broker_samples
+	broker.metrics.window.ms = 360000
+	broker.removal.shutdown.timeout.ms = 600000
+	broker.replica.exclusion.timeout.ms = 120000
+	bytes.cpu.contribution.weight = 0.2
+	calculated.throttle.ratio = 0.8
+	cdbe.shutdown.wait.ms = 15000
+	client.id = kafka-cruise-control
+	connections.max.idle.ms = 540000
+	cpu.balance.threshold = 1.1
+	cpu.capacity.threshold = 1.0
+	cpu.low.utilization.threshold = 0.2
+	cpu.utilization.detector.duration.ms = 600000
+	cpu.utilization.detector.overutilization.threshold = 80.0
+	cpu.utilization.detector.underutilization.threshold = 50.0
+	default.api.timeout.ms = 60000
+	default.replica.movement.strategies = [com.linkedin.kafka.cruisecontrol.executor.strategy.BaseReplicaMovementStrategy]
+	describe.broker.exclusion.timeout.ms = 60000
+	describe.cluster.response.timeout.ms = 30000
+	describe.configs.batch.size = 1000
+	describe.configs.response.timeout.ms = 30000
+	describe.topics.response.timeout.ms = 30000
+	disk.balance.threshold = 1.1
+	disk.low.utilization.threshold = 0.2
+	disk.max.load = 0.85
+	disk.min.free.space.gb = 0
+	disk.read.ratio = 0.2
+	disk.utilization.detector.duration.ms = 600000
+	disk.utilization.detector.overutilization.threshold = 80.0
+	disk.utilization.detector.reserved.capacity = 150000.0
+	disk.utilization.detector.underutilization.threshold = 35.0
+	execution.progress.check.interval.ms = 7000
+	executor.leader.action.timeout.ms = 180000
+	executor.notifier.class = class com.linkedin.kafka.cruisecontrol.executor.ExecutorNoopNotifier
+	executor.reservation.refresh.time.ms = 60000
+	follower.network.inbound.weight.for.cpu.util = 0.15
+	goal.balancedness.priority.weight = 1.1
+	goal.balancedness.strictness.weight = 1.5
+	goal.violation.delay.on.new.brokers.ms = 1800000
+	goal.violation.distribution.threshold.multiplier = 1.1
+	goal.violation.exclude.recently.removed.brokers = true
+	goals = [com.linkedin.kafka.cruisecontrol.analyzer.goals.MovementExclusionGoal, io.confluent.cruisecontrol.analyzer.goals.ReplicaPlacementGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.RackAwareGoal, io.confluent.cruisecontrol.analyzer.goals.MaxReplicaMovementParallelismGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.ReplicaCapacityGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.DiskCapacityGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.NetworkInboundCapacityGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.NetworkOutboundCapacityGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.ProducerInboundCapacityGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.SystemTopicEvenDistributionGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.ReplicaDistributionGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.DiskUsageDistributionGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.LeaderReplicaDistributionGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.NetworkInboundUsageDistributionGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.NetworkOutboundUsageDistributionGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.CpuUsageDistributionGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.TopicReplicaDistributionGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.LeaderBytesInDistributionGoal]
+	hot.partition.capacity.utilization.threshold = 0.2
+	incremental.balancing.cpu.top.proposal.tracking.enabled = false
+	incremental.balancing.cpu.top.proposal.tracking.num.proposals = 15
+	incremental.balancing.enabled = false
+	incremental.balancing.goals = [com.linkedin.kafka.cruisecontrol.analyzer.goals.MovementExclusionGoal, io.confluent.cruisecontrol.analyzer.goals.ReplicaPlacementGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.RackAwareGoal, io.confluent.cruisecontrol.analyzer.goals.MaxReplicaMovementParallelismGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.ReplicaCapacityGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.DiskCapacityGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.NetworkInboundCapacityGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.NetworkOutboundCapacityGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.ProducerInboundCapacityGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.IncrementalCPUResourceDistributionGoal]
+	incremental.balancing.lower.bound = 0.02
+	incremental.balancing.step.ratio = 0.2
+	intra.broker.goals = [com.linkedin.kafka.cruisecontrol.analyzer.goals.IntraBrokerDiskCapacityGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.IntraBrokerDiskUsageDistributionGoal]
+	invalid.replica.assignment.retry.timeout.ms = 300000
+	leader.network.inbound.weight.for.cpu.util = 0.7
+	leader.network.outbound.weight.for.cpu.util = 0.15
+	leader.replica.count.balance.threshold = 1.1
+	logdir.response.timeout.ms = 30000
+	max.allowed.extrapolations.per.broker = 5
+	max.allowed.extrapolations.per.partition = 5
+	max.capacity.balancing.delta.percentage = 0.0
+	max.replicas = 2147483647
+	max.volume.throughput.mb = 0
+	metadata.client.timeout.ms = 180000
+	metadata.ttl = 10000
+	metric.sampler.class = class io.confluent.cruisecontrol.metricsreporter.ConfluentTelemetryReporterSampler
+	metric.sampler.partition.assignor.class = class com.linkedin.kafka.cruisecontrol.monitor.sampling.DefaultMetricSamplerPartitionAssignor
+	metric.sampling.interval.ms = 180000
+	min.samples.per.broker.metrics.window = 1
+	min.samples.per.partition.metrics.window = 1
+	min.valid.partition.ratio = 0.95
+	network.in.max.bytes.per.second = 9223372036854775807
+	network.inbound.balance.threshold = 1.1
+	network.inbound.capacity.threshold = 0.8
+	network.inbound.low.utilization.threshold = 0.2
+	network.out.max.bytes.per.second = 9223372036854775807
+	network.outbound.balance.threshold = 1.1
+	network.outbound.capacity.threshold = 0.8
+	network.outbound.low.utilization.threshold = 0.2
+	num.broker.metrics.windows = 20
+	num.cached.recent.anomaly.states = 10
+	num.concurrent.intra.broker.partition.movements = 2
+	num.concurrent.leader.movements = 1000
+	num.concurrent.partition.movements.per.broker = 5
+	num.metric.fetchers = 1
+	num.partition.metrics.windows = 6
+	partition.metric.sample.aggregator.completeness.cache.size = 5
+	partition.metric.sample.store.topic = _confluent_balancer_partition_samples
+	partition.metrics.window.ms = 360000
+	plan.computation.retry.timeout.ms = 3600000
+	producer.in.max.bytes.per.second = 9223372036854775807
+	producer.inbound.capacity.threshold = 0.9
+	read.throughput.multiplier = 1.0
+	receive.buffer.bytes = 32768
+	reconnect.backoff.ms = 50
+	removal.history.retention.time.ms = 86400000
+	replica.count.balance.threshold = 1.1
+	replica.movement.strategies = [com.linkedin.kafka.cruisecontrol.executor.strategy.PostponeUrpReplicaMovementStrategy, com.linkedin.kafka.cruisecontrol.executor.strategy.PrioritizeLargeReplicaMovementStrategy, com.linkedin.kafka.cruisecontrol.executor.strategy.PrioritizeSmallReplicaMovementStrategy, com.linkedin.kafka.cruisecontrol.executor.strategy.BaseReplicaMovementStrategy]
+	request.cpu.contribution.weight = 0.8
+	request.timeout.ms = 30000
+	resource.utilization.detector.enabled = false
+	resource.utilization.detector.interval.ms = 60000
+	sampling.allow.cpu.capacity.estimation = true
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	self.healing.broker.failure.enabled = true
+	self.healing.goal.violation.enabled = false
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	startup.retry.delay.minutes = 5
+	startup.retry.max.hours = 2
+	static.throttle.rate.override.enabled = false
+	throttle.bytes.per.second = 10485760
+	topic.partition.maximum.movements = 5
+	topic.partition.movement.expiration.ms = 3600000
+	topic.partition.suspension.ms = 10800000
+	topic.replica.count.balance.threshold = 3.0
+	topics.excluded.from.partition.movement = 
+	write.throughput.multiplier = 1.0
+	zookeeper.connect = localhost:2181
+	zookeeper.security.enabled = false
+ (com.linkedin.kafka.cruisecontrol.config.KafkaCruiseControlConfig)
+[2023-07-20 16:49:04,557] INFO Starting anomaly detector. (com.linkedin.kafka.cruisecontrol.detector.AnomalyDetector)
+[2023-07-20 16:49:04,558] INFO [SBK_BrokerFailureDetector]: Starting (com.linkedin.kafka.cruisecontrol.detector.BrokerFailureDetector)
+[2023-07-20 16:49:04,560] INFO Starting anomaly handler (com.linkedin.kafka.cruisecontrol.detector.AnomalyDetector)
+[2023-07-20 16:49:04,561] INFO Kafka Cruise Control started. (com.linkedin.kafka.cruisecontrol.KafkaCruiseControl)
+[2023-07-20 16:49:04,562] INFO Alive brokers: [0], failed brokers: [] (com.linkedin.kafka.cruisecontrol.detector.BrokerFailureDetector)
+[2023-07-20 16:49:04,562] INFO No pending DataBalancer operations found at startup. (io.confluent.databalancer.ConfluentDataBalanceEngine)
+[2023-07-20 16:49:04,563] INFO Balancer Status state for brokers [0] transitioned from STARTING to RUNNING due to event CRUISE_CONTROL_INITIALIZATION_COMPLETED. (io.confluent.databalancer.operation.StateMachine)
+[2023-07-20 16:49:04,563] INFO DataBalancer: Scheduling DataBalanceEngine auto-heal update (setting to false) (io.confluent.databalancer.ConfluentDataBalanceEngine)
+[2023-07-20 16:49:04,563] INFO Updated list of failed broker: {} (com.linkedin.kafka.cruisecontrol.detector.BrokerFailureDetector)
+[2023-07-20 16:49:04,566] INFO DataBalancer: DataBalanceEngine started (io.confluent.databalancer.ConfluentDataBalanceEngine)
+[2023-07-20 16:49:04,566] INFO Databalancer: Updating auto-heal mode to (false) (io.confluent.databalancer.ConfluentDataBalanceEngine)
+[2023-07-20 16:49:04,566] INFO Changing GOAL_VIOLATION anomaly self-healing actions to false (io.confluent.databalancer.ConfluentDataBalanceEngine)
+[2023-07-20 16:49:04,566] INFO Goal violation self-healing left disabled (no change) (com.linkedin.kafka.cruisecontrol.KafkaCruiseControl)
+[2023-07-20 16:49:05,199] WARN Broker 0 is missing 1/3 topics metrics and 1/14 leader partition metrics. Missing leader topics: [_confluent_balancer_api_state]. (com.linkedin.kafka.cruisecontrol.monitor.sampling.holder.BrokerLoad)
+[2023-07-20 16:49:05,202] ERROR Error building replica metric sample for _confluent-telemetry-metrics-7, replica: localhost:9092 (id: 0 rack: null). Error: Broker metric ALL_TOPIC_FETCH_FROM_FOLLOWER_BYTES_OUT does not exist. (com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor)
+java.lang.IllegalArgumentException: Broker metric ALL_TOPIC_FETCH_FROM_FOLLOWER_BYTES_OUT does not exist.
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.holder.BrokerLoad.brokerMetric(BrokerLoad.java:104)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingUtils$BrokerMetrics.<init>(SamplingUtils.java:146)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingUtils.estimateCpuUtil(SamplingUtils.java:111)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingUtils.buildReplicaMetricSample(SamplingUtils.java:318)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor.addReplicaMetricSamples(CruiseControlMetricsProcessor.java:382)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor.process(CruiseControlMetricsProcessor.java:316)
+	at io.confluent.cruisecontrol.metricsreporter.ConfluentMetricsSamplerBase.getSamples(ConfluentMetricsSamplerBase.java:238)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingFetcher.fetchSamples(SamplingFetcher.java:105)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingFetcher.fetchMetricsForAssignedPartitions(SamplingFetcher.java:87)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.MetricFetcher.call(MetricFetcher.java:24)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.MetricFetcher.call(MetricFetcher.java:16)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at com.linkedin.kafka.cruisecontrol.common.KafkaCruiseControlThreadFactory.lambda$newThread$1(KafkaCruiseControlThreadFactory.java:43)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+[2023-07-20 16:49:05,204] ERROR Error building replica metric sample for _confluent-telemetry-metrics-6, replica: localhost:9092 (id: 0 rack: null). Error: Broker metric ALL_TOPIC_FETCH_FROM_FOLLOWER_BYTES_OUT does not exist. (com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor)
+java.lang.IllegalArgumentException: Broker metric ALL_TOPIC_FETCH_FROM_FOLLOWER_BYTES_OUT does not exist.
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.holder.BrokerLoad.brokerMetric(BrokerLoad.java:104)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingUtils$BrokerMetrics.<init>(SamplingUtils.java:146)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingUtils.estimateCpuUtil(SamplingUtils.java:111)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingUtils.buildReplicaMetricSample(SamplingUtils.java:318)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor.addReplicaMetricSamples(CruiseControlMetricsProcessor.java:382)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor.process(CruiseControlMetricsProcessor.java:316)
+	at io.confluent.cruisecontrol.metricsreporter.ConfluentMetricsSamplerBase.getSamples(ConfluentMetricsSamplerBase.java:238)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingFetcher.fetchSamples(SamplingFetcher.java:105)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingFetcher.fetchMetricsForAssignedPartitions(SamplingFetcher.java:87)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.MetricFetcher.call(MetricFetcher.java:24)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.MetricFetcher.call(MetricFetcher.java:16)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at com.linkedin.kafka.cruisecontrol.common.KafkaCruiseControlThreadFactory.lambda$newThread$1(KafkaCruiseControlThreadFactory.java:43)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+[2023-07-20 16:49:05,204] ERROR Error building replica metric sample for _confluent-telemetry-metrics-1, replica: localhost:9092 (id: 0 rack: null). Error: Broker metric ALL_TOPIC_FETCH_FROM_FOLLOWER_BYTES_OUT does not exist. (com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor)
+java.lang.IllegalArgumentException: Broker metric ALL_TOPIC_FETCH_FROM_FOLLOWER_BYTES_OUT does not exist.
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.holder.BrokerLoad.brokerMetric(BrokerLoad.java:104)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingUtils$BrokerMetrics.<init>(SamplingUtils.java:146)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingUtils.estimateCpuUtil(SamplingUtils.java:111)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingUtils.buildReplicaMetricSample(SamplingUtils.java:318)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor.addReplicaMetricSamples(CruiseControlMetricsProcessor.java:382)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor.process(CruiseControlMetricsProcessor.java:316)
+	at io.confluent.cruisecontrol.metricsreporter.ConfluentMetricsSamplerBase.getSamples(ConfluentMetricsSamplerBase.java:238)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingFetcher.fetchSamples(SamplingFetcher.java:105)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingFetcher.fetchMetricsForAssignedPartitions(SamplingFetcher.java:87)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.MetricFetcher.call(MetricFetcher.java:24)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.MetricFetcher.call(MetricFetcher.java:16)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at com.linkedin.kafka.cruisecontrol.common.KafkaCruiseControlThreadFactory.lambda$newThread$1(KafkaCruiseControlThreadFactory.java:43)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+[2023-07-20 16:49:05,204] ERROR Error building replica metric sample for _confluent-telemetry-metrics-10, replica: localhost:9092 (id: 0 rack: null). Error: Broker metric ALL_TOPIC_FETCH_FROM_FOLLOWER_BYTES_OUT does not exist. (com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor)
+java.lang.IllegalArgumentException: Broker metric ALL_TOPIC_FETCH_FROM_FOLLOWER_BYTES_OUT does not exist.
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.holder.BrokerLoad.brokerMetric(BrokerLoad.java:104)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingUtils$BrokerMetrics.<init>(SamplingUtils.java:146)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingUtils.estimateCpuUtil(SamplingUtils.java:111)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingUtils.buildReplicaMetricSample(SamplingUtils.java:318)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor.addReplicaMetricSamples(CruiseControlMetricsProcessor.java:382)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor.process(CruiseControlMetricsProcessor.java:316)
+	at io.confluent.cruisecontrol.metricsreporter.ConfluentMetricsSamplerBase.getSamples(ConfluentMetricsSamplerBase.java:238)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingFetcher.fetchSamples(SamplingFetcher.java:105)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingFetcher.fetchMetricsForAssignedPartitions(SamplingFetcher.java:87)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.MetricFetcher.call(MetricFetcher.java:24)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.MetricFetcher.call(MetricFetcher.java:16)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at com.linkedin.kafka.cruisecontrol.common.KafkaCruiseControlThreadFactory.lambda$newThread$1(KafkaCruiseControlThreadFactory.java:43)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+[2023-07-20 16:49:05,204] ERROR Error building replica metric sample for _confluent-command-0, replica: localhost:9092 (id: 0 rack: null). Error: Broker metric ALL_TOPIC_FETCH_FROM_FOLLOWER_BYTES_OUT does not exist. (com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor)
+java.lang.IllegalArgumentException: Broker metric ALL_TOPIC_FETCH_FROM_FOLLOWER_BYTES_OUT does not exist.
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.holder.BrokerLoad.brokerMetric(BrokerLoad.java:104)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingUtils$BrokerMetrics.<init>(SamplingUtils.java:146)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingUtils.estimateCpuUtil(SamplingUtils.java:111)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingUtils.buildReplicaMetricSample(SamplingUtils.java:318)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor.addReplicaMetricSamples(CruiseControlMetricsProcessor.java:382)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor.process(CruiseControlMetricsProcessor.java:316)
+	at io.confluent.cruisecontrol.metricsreporter.ConfluentMetricsSamplerBase.getSamples(ConfluentMetricsSamplerBase.java:238)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingFetcher.fetchSamples(SamplingFetcher.java:105)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingFetcher.fetchMetricsForAssignedPartitions(SamplingFetcher.java:87)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.MetricFetcher.call(MetricFetcher.java:24)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.MetricFetcher.call(MetricFetcher.java:16)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at com.linkedin.kafka.cruisecontrol.common.KafkaCruiseControlThreadFactory.lambda$newThread$1(KafkaCruiseControlThreadFactory.java:43)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+[2023-07-20 16:49:05,204] ERROR Error building replica metric sample for _confluent-telemetry-metrics-3, replica: localhost:9092 (id: 0 rack: null). Error: Broker metric ALL_TOPIC_FETCH_FROM_FOLLOWER_BYTES_OUT does not exist. (com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor)
+java.lang.IllegalArgumentException: Broker metric ALL_TOPIC_FETCH_FROM_FOLLOWER_BYTES_OUT does not exist.
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.holder.BrokerLoad.brokerMetric(BrokerLoad.java:104)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingUtils$BrokerMetrics.<init>(SamplingUtils.java:146)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingUtils.estimateCpuUtil(SamplingUtils.java:111)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingUtils.buildReplicaMetricSample(SamplingUtils.java:318)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor.addReplicaMetricSamples(CruiseControlMetricsProcessor.java:382)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor.process(CruiseControlMetricsProcessor.java:316)
+	at io.confluent.cruisecontrol.metricsreporter.ConfluentMetricsSamplerBase.getSamples(ConfluentMetricsSamplerBase.java:238)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingFetcher.fetchSamples(SamplingFetcher.java:105)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingFetcher.fetchMetricsForAssignedPartitions(SamplingFetcher.java:87)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.MetricFetcher.call(MetricFetcher.java:24)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.MetricFetcher.call(MetricFetcher.java:16)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at com.linkedin.kafka.cruisecontrol.common.KafkaCruiseControlThreadFactory.lambda$newThread$1(KafkaCruiseControlThreadFactory.java:43)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+[2023-07-20 16:49:05,204] ERROR Error building replica metric sample for _confluent-telemetry-metrics-11, replica: localhost:9092 (id: 0 rack: null). Error: Broker metric ALL_TOPIC_FETCH_FROM_FOLLOWER_BYTES_OUT does not exist. (com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor)
+java.lang.IllegalArgumentException: Broker metric ALL_TOPIC_FETCH_FROM_FOLLOWER_BYTES_OUT does not exist.
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.holder.BrokerLoad.brokerMetric(BrokerLoad.java:104)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingUtils$BrokerMetrics.<init>(SamplingUtils.java:146)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingUtils.estimateCpuUtil(SamplingUtils.java:111)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingUtils.buildReplicaMetricSample(SamplingUtils.java:318)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor.addReplicaMetricSamples(CruiseControlMetricsProcessor.java:382)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor.process(CruiseControlMetricsProcessor.java:316)
+	at io.confluent.cruisecontrol.metricsreporter.ConfluentMetricsSamplerBase.getSamples(ConfluentMetricsSamplerBase.java:238)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingFetcher.fetchSamples(SamplingFetcher.java:105)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingFetcher.fetchMetricsForAssignedPartitions(SamplingFetcher.java:87)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.MetricFetcher.call(MetricFetcher.java:24)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.MetricFetcher.call(MetricFetcher.java:16)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at com.linkedin.kafka.cruisecontrol.common.KafkaCruiseControlThreadFactory.lambda$newThread$1(KafkaCruiseControlThreadFactory.java:43)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+[2023-07-20 16:49:05,204] ERROR Error building replica metric sample for _confluent-telemetry-metrics-8, replica: localhost:9092 (id: 0 rack: null). Error: Broker metric ALL_TOPIC_FETCH_FROM_FOLLOWER_BYTES_OUT does not exist. (com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor)
+java.lang.IllegalArgumentException: Broker metric ALL_TOPIC_FETCH_FROM_FOLLOWER_BYTES_OUT does not exist.
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.holder.BrokerLoad.brokerMetric(BrokerLoad.java:104)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingUtils$BrokerMetrics.<init>(SamplingUtils.java:146)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingUtils.estimateCpuUtil(SamplingUtils.java:111)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingUtils.buildReplicaMetricSample(SamplingUtils.java:318)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor.addReplicaMetricSamples(CruiseControlMetricsProcessor.java:382)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor.process(CruiseControlMetricsProcessor.java:316)
+	at io.confluent.cruisecontrol.metricsreporter.ConfluentMetricsSamplerBase.getSamples(ConfluentMetricsSamplerBase.java:238)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingFetcher.fetchSamples(SamplingFetcher.java:105)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingFetcher.fetchMetricsForAssignedPartitions(SamplingFetcher.java:87)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.MetricFetcher.call(MetricFetcher.java:24)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.MetricFetcher.call(MetricFetcher.java:16)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at com.linkedin.kafka.cruisecontrol.common.KafkaCruiseControlThreadFactory.lambda$newThread$1(KafkaCruiseControlThreadFactory.java:43)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+[2023-07-20 16:49:05,205] ERROR Error building replica metric sample for _confluent-telemetry-metrics-5, replica: localhost:9092 (id: 0 rack: null). Error: Broker metric ALL_TOPIC_FETCH_FROM_FOLLOWER_BYTES_OUT does not exist. (com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor)
+java.lang.IllegalArgumentException: Broker metric ALL_TOPIC_FETCH_FROM_FOLLOWER_BYTES_OUT does not exist.
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.holder.BrokerLoad.brokerMetric(BrokerLoad.java:104)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingUtils$BrokerMetrics.<init>(SamplingUtils.java:146)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingUtils.estimateCpuUtil(SamplingUtils.java:111)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingUtils.buildReplicaMetricSample(SamplingUtils.java:318)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor.addReplicaMetricSamples(CruiseControlMetricsProcessor.java:382)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor.process(CruiseControlMetricsProcessor.java:316)
+	at io.confluent.cruisecontrol.metricsreporter.ConfluentMetricsSamplerBase.getSamples(ConfluentMetricsSamplerBase.java:238)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingFetcher.fetchSamples(SamplingFetcher.java:105)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingFetcher.fetchMetricsForAssignedPartitions(SamplingFetcher.java:87)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.MetricFetcher.call(MetricFetcher.java:24)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.MetricFetcher.call(MetricFetcher.java:16)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at com.linkedin.kafka.cruisecontrol.common.KafkaCruiseControlThreadFactory.lambda$newThread$1(KafkaCruiseControlThreadFactory.java:43)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+[2023-07-20 16:49:05,205] ERROR Error building replica metric sample for _confluent-telemetry-metrics-9, replica: localhost:9092 (id: 0 rack: null). Error: Broker metric ALL_TOPIC_FETCH_FROM_FOLLOWER_BYTES_OUT does not exist. (com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor)
+java.lang.IllegalArgumentException: Broker metric ALL_TOPIC_FETCH_FROM_FOLLOWER_BYTES_OUT does not exist.
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.holder.BrokerLoad.brokerMetric(BrokerLoad.java:104)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingUtils$BrokerMetrics.<init>(SamplingUtils.java:146)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingUtils.estimateCpuUtil(SamplingUtils.java:111)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingUtils.buildReplicaMetricSample(SamplingUtils.java:318)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor.addReplicaMetricSamples(CruiseControlMetricsProcessor.java:382)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor.process(CruiseControlMetricsProcessor.java:316)
+	at io.confluent.cruisecontrol.metricsreporter.ConfluentMetricsSamplerBase.getSamples(ConfluentMetricsSamplerBase.java:238)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingFetcher.fetchSamples(SamplingFetcher.java:105)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingFetcher.fetchMetricsForAssignedPartitions(SamplingFetcher.java:87)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.MetricFetcher.call(MetricFetcher.java:24)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.MetricFetcher.call(MetricFetcher.java:16)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at com.linkedin.kafka.cruisecontrol.common.KafkaCruiseControlThreadFactory.lambda$newThread$1(KafkaCruiseControlThreadFactory.java:43)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+[2023-07-20 16:49:05,205] INFO Already logged 10 errors. Switching to trace level logging now. (com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor)
+[2023-07-20 16:49:05,205] WARN Skip generating metric sample for broker 0 because there are not enough topic metrics to generate broker metrics. (com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingUtils)
+[2023-07-20 16:49:05,205] INFO Generated 0(13 skipped) replica metrics samples, 13(1 skipped) partition metric samples and 0(1 skipped) broker metric samples from timestamp 1689846540323 to timestamp 1689846540442. (com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor)
+[2023-07-20 16:49:05,205] INFO PARTITION Aggregator rolled out 1 new windows, reset 7 windows, current window range [1689844680000, 1689846840000], abandon 0 samples. (com.linkedin.cruisecontrol.monitor.sampling.aggregator.MetricSampleAggregator)
+[2023-07-20 16:49:37,405] INFO Skipping goal violation detection due to previous new broker change (com.linkedin.kafka.cruisecontrol.detector.GoalViolationDetector)
+[2023-07-20 16:50:37,404] INFO Skipping goal violation detection due to previous new broker change (com.linkedin.kafka.cruisecontrol.detector.GoalViolationDetector)
+[2023-07-20 16:51:37,404] INFO Skipping goal violation detection due to previous new broker change (com.linkedin.kafka.cruisecontrol.detector.GoalViolationDetector)
+[2023-07-20 16:52:04,592] WARN Broker 0 is missing 1/5 topics metrics and 3/67 leader partition metrics. Missing leader topics: [BTC]. (com.linkedin.kafka.cruisecontrol.monitor.sampling.holder.BrokerLoad)
+[2023-07-20 16:52:04,593] ERROR Error building replica metric sample for _confluent-telemetry-metrics-3, replica: localhost:9092 (id: 0 rack: null). Error: Broker metric ALL_TOPIC_FETCH_FROM_FOLLOWER_BYTES_OUT does not exist. (com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor)
+java.lang.IllegalArgumentException: Broker metric ALL_TOPIC_FETCH_FROM_FOLLOWER_BYTES_OUT does not exist.
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.holder.BrokerLoad.brokerMetric(BrokerLoad.java:104)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingUtils$BrokerMetrics.<init>(SamplingUtils.java:146)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingUtils.estimateCpuUtil(SamplingUtils.java:111)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingUtils.buildReplicaMetricSample(SamplingUtils.java:318)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor.addReplicaMetricSamples(CruiseControlMetricsProcessor.java:382)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor.process(CruiseControlMetricsProcessor.java:316)
+	at io.confluent.cruisecontrol.metricsreporter.ConfluentMetricsSamplerBase.getSamples(ConfluentMetricsSamplerBase.java:238)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingFetcher.fetchSamples(SamplingFetcher.java:105)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingFetcher.fetchMetricsForAssignedPartitions(SamplingFetcher.java:87)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.MetricFetcher.call(MetricFetcher.java:24)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.MetricFetcher.call(MetricFetcher.java:16)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at com.linkedin.kafka.cruisecontrol.common.KafkaCruiseControlThreadFactory.lambda$newThread$1(KafkaCruiseControlThreadFactory.java:43)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+[2023-07-20 16:52:04,593] ERROR Error building replica metric sample for __consumer_offsets-31, replica: localhost:9092 (id: 0 rack: null). Error: Broker metric ALL_TOPIC_FETCH_FROM_FOLLOWER_BYTES_OUT does not exist. (com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor)
+java.lang.IllegalArgumentException: Broker metric ALL_TOPIC_FETCH_FROM_FOLLOWER_BYTES_OUT does not exist.
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.holder.BrokerLoad.brokerMetric(BrokerLoad.java:104)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingUtils$BrokerMetrics.<init>(SamplingUtils.java:146)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingUtils.estimateCpuUtil(SamplingUtils.java:111)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingUtils.buildReplicaMetricSample(SamplingUtils.java:318)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor.addReplicaMetricSamples(CruiseControlMetricsProcessor.java:382)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor.process(CruiseControlMetricsProcessor.java:316)
+	at io.confluent.cruisecontrol.metricsreporter.ConfluentMetricsSamplerBase.getSamples(ConfluentMetricsSamplerBase.java:238)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingFetcher.fetchSamples(SamplingFetcher.java:105)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingFetcher.fetchMetricsForAssignedPartitions(SamplingFetcher.java:87)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.MetricFetcher.call(MetricFetcher.java:24)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.MetricFetcher.call(MetricFetcher.java:16)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at com.linkedin.kafka.cruisecontrol.common.KafkaCruiseControlThreadFactory.lambda$newThread$1(KafkaCruiseControlThreadFactory.java:43)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+[2023-07-20 16:52:04,593] ERROR Error building replica metric sample for __consumer_offsets-9, replica: localhost:9092 (id: 0 rack: null). Error: Broker metric ALL_TOPIC_FETCH_FROM_FOLLOWER_BYTES_OUT does not exist. (com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor)
+java.lang.IllegalArgumentException: Broker metric ALL_TOPIC_FETCH_FROM_FOLLOWER_BYTES_OUT does not exist.
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.holder.BrokerLoad.brokerMetric(BrokerLoad.java:104)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingUtils$BrokerMetrics.<init>(SamplingUtils.java:146)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingUtils.estimateCpuUtil(SamplingUtils.java:111)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingUtils.buildReplicaMetricSample(SamplingUtils.java:318)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor.addReplicaMetricSamples(CruiseControlMetricsProcessor.java:382)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor.process(CruiseControlMetricsProcessor.java:316)
+	at io.confluent.cruisecontrol.metricsreporter.ConfluentMetricsSamplerBase.getSamples(ConfluentMetricsSamplerBase.java:238)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingFetcher.fetchSamples(SamplingFetcher.java:105)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingFetcher.fetchMetricsForAssignedPartitions(SamplingFetcher.java:87)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.MetricFetcher.call(MetricFetcher.java:24)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.MetricFetcher.call(MetricFetcher.java:16)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at com.linkedin.kafka.cruisecontrol.common.KafkaCruiseControlThreadFactory.lambda$newThread$1(KafkaCruiseControlThreadFactory.java:43)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+[2023-07-20 16:52:04,593] ERROR Error building replica metric sample for __consumer_offsets-12, replica: localhost:9092 (id: 0 rack: null). Error: Broker metric ALL_TOPIC_FETCH_FROM_FOLLOWER_BYTES_OUT does not exist. (com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor)
+java.lang.IllegalArgumentException: Broker metric ALL_TOPIC_FETCH_FROM_FOLLOWER_BYTES_OUT does not exist.
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.holder.BrokerLoad.brokerMetric(BrokerLoad.java:104)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingUtils$BrokerMetrics.<init>(SamplingUtils.java:146)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingUtils.estimateCpuUtil(SamplingUtils.java:111)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingUtils.buildReplicaMetricSample(SamplingUtils.java:318)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor.addReplicaMetricSamples(CruiseControlMetricsProcessor.java:382)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor.process(CruiseControlMetricsProcessor.java:316)
+	at io.confluent.cruisecontrol.metricsreporter.ConfluentMetricsSamplerBase.getSamples(ConfluentMetricsSamplerBase.java:238)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingFetcher.fetchSamples(SamplingFetcher.java:105)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingFetcher.fetchMetricsForAssignedPartitions(SamplingFetcher.java:87)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.MetricFetcher.call(MetricFetcher.java:24)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.MetricFetcher.call(MetricFetcher.java:16)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at com.linkedin.kafka.cruisecontrol.common.KafkaCruiseControlThreadFactory.lambda$newThread$1(KafkaCruiseControlThreadFactory.java:43)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+[2023-07-20 16:52:04,593] ERROR Error building replica metric sample for __consumer_offsets-18, replica: localhost:9092 (id: 0 rack: null). Error: Broker metric ALL_TOPIC_FETCH_FROM_FOLLOWER_BYTES_OUT does not exist. (com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor)
+java.lang.IllegalArgumentException: Broker metric ALL_TOPIC_FETCH_FROM_FOLLOWER_BYTES_OUT does not exist.
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.holder.BrokerLoad.brokerMetric(BrokerLoad.java:104)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingUtils$BrokerMetrics.<init>(SamplingUtils.java:146)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingUtils.estimateCpuUtil(SamplingUtils.java:111)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingUtils.buildReplicaMetricSample(SamplingUtils.java:318)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor.addReplicaMetricSamples(CruiseControlMetricsProcessor.java:382)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor.process(CruiseControlMetricsProcessor.java:316)
+	at io.confluent.cruisecontrol.metricsreporter.ConfluentMetricsSamplerBase.getSamples(ConfluentMetricsSamplerBase.java:238)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingFetcher.fetchSamples(SamplingFetcher.java:105)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingFetcher.fetchMetricsForAssignedPartitions(SamplingFetcher.java:87)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.MetricFetcher.call(MetricFetcher.java:24)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.MetricFetcher.call(MetricFetcher.java:16)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at com.linkedin.kafka.cruisecontrol.common.KafkaCruiseControlThreadFactory.lambda$newThread$1(KafkaCruiseControlThreadFactory.java:43)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+[2023-07-20 16:52:04,594] ERROR Error building replica metric sample for __consumer_offsets-39, replica: localhost:9092 (id: 0 rack: null). Error: Broker metric ALL_TOPIC_FETCH_FROM_FOLLOWER_BYTES_OUT does not exist. (com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor)
+java.lang.IllegalArgumentException: Broker metric ALL_TOPIC_FETCH_FROM_FOLLOWER_BYTES_OUT does not exist.
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.holder.BrokerLoad.brokerMetric(BrokerLoad.java:104)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingUtils$BrokerMetrics.<init>(SamplingUtils.java:146)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingUtils.estimateCpuUtil(SamplingUtils.java:111)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingUtils.buildReplicaMetricSample(SamplingUtils.java:318)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor.addReplicaMetricSamples(CruiseControlMetricsProcessor.java:382)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor.process(CruiseControlMetricsProcessor.java:316)
+	at io.confluent.cruisecontrol.metricsreporter.ConfluentMetricsSamplerBase.getSamples(ConfluentMetricsSamplerBase.java:238)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingFetcher.fetchSamples(SamplingFetcher.java:105)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingFetcher.fetchMetricsForAssignedPartitions(SamplingFetcher.java:87)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.MetricFetcher.call(MetricFetcher.java:24)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.MetricFetcher.call(MetricFetcher.java:16)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at com.linkedin.kafka.cruisecontrol.common.KafkaCruiseControlThreadFactory.lambda$newThread$1(KafkaCruiseControlThreadFactory.java:43)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+[2023-07-20 16:52:04,594] ERROR Error building replica metric sample for __consumer_offsets-6, replica: localhost:9092 (id: 0 rack: null). Error: Broker metric ALL_TOPIC_FETCH_FROM_FOLLOWER_BYTES_OUT does not exist. (com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor)
+java.lang.IllegalArgumentException: Broker metric ALL_TOPIC_FETCH_FROM_FOLLOWER_BYTES_OUT does not exist.
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.holder.BrokerLoad.brokerMetric(BrokerLoad.java:104)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingUtils$BrokerMetrics.<init>(SamplingUtils.java:146)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingUtils.estimateCpuUtil(SamplingUtils.java:111)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingUtils.buildReplicaMetricSample(SamplingUtils.java:318)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor.addReplicaMetricSamples(CruiseControlMetricsProcessor.java:382)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor.process(CruiseControlMetricsProcessor.java:316)
+	at io.confluent.cruisecontrol.metricsreporter.ConfluentMetricsSamplerBase.getSamples(ConfluentMetricsSamplerBase.java:238)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingFetcher.fetchSamples(SamplingFetcher.java:105)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingFetcher.fetchMetricsForAssignedPartitions(SamplingFetcher.java:87)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.MetricFetcher.call(MetricFetcher.java:24)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.MetricFetcher.call(MetricFetcher.java:16)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at com.linkedin.kafka.cruisecontrol.common.KafkaCruiseControlThreadFactory.lambda$newThread$1(KafkaCruiseControlThreadFactory.java:43)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+[2023-07-20 16:52:04,594] ERROR Error building replica metric sample for _confluent-telemetry-metrics-9, replica: localhost:9092 (id: 0 rack: null). Error: Broker metric ALL_TOPIC_FETCH_FROM_FOLLOWER_BYTES_OUT does not exist. (com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor)
+java.lang.IllegalArgumentException: Broker metric ALL_TOPIC_FETCH_FROM_FOLLOWER_BYTES_OUT does not exist.
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.holder.BrokerLoad.brokerMetric(BrokerLoad.java:104)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingUtils$BrokerMetrics.<init>(SamplingUtils.java:146)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingUtils.estimateCpuUtil(SamplingUtils.java:111)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingUtils.buildReplicaMetricSample(SamplingUtils.java:318)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor.addReplicaMetricSamples(CruiseControlMetricsProcessor.java:382)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor.process(CruiseControlMetricsProcessor.java:316)
+	at io.confluent.cruisecontrol.metricsreporter.ConfluentMetricsSamplerBase.getSamples(ConfluentMetricsSamplerBase.java:238)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingFetcher.fetchSamples(SamplingFetcher.java:105)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingFetcher.fetchMetricsForAssignedPartitions(SamplingFetcher.java:87)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.MetricFetcher.call(MetricFetcher.java:24)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.MetricFetcher.call(MetricFetcher.java:16)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at com.linkedin.kafka.cruisecontrol.common.KafkaCruiseControlThreadFactory.lambda$newThread$1(KafkaCruiseControlThreadFactory.java:43)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+[2023-07-20 16:52:04,594] ERROR Error building replica metric sample for __consumer_offsets-16, replica: localhost:9092 (id: 0 rack: null). Error: Broker metric ALL_TOPIC_FETCH_FROM_FOLLOWER_BYTES_OUT does not exist. (com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor)
+java.lang.IllegalArgumentException: Broker metric ALL_TOPIC_FETCH_FROM_FOLLOWER_BYTES_OUT does not exist.
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.holder.BrokerLoad.brokerMetric(BrokerLoad.java:104)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingUtils$BrokerMetrics.<init>(SamplingUtils.java:146)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingUtils.estimateCpuUtil(SamplingUtils.java:111)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingUtils.buildReplicaMetricSample(SamplingUtils.java:318)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor.addReplicaMetricSamples(CruiseControlMetricsProcessor.java:382)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor.process(CruiseControlMetricsProcessor.java:316)
+	at io.confluent.cruisecontrol.metricsreporter.ConfluentMetricsSamplerBase.getSamples(ConfluentMetricsSamplerBase.java:238)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingFetcher.fetchSamples(SamplingFetcher.java:105)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingFetcher.fetchMetricsForAssignedPartitions(SamplingFetcher.java:87)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.MetricFetcher.call(MetricFetcher.java:24)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.MetricFetcher.call(MetricFetcher.java:16)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at com.linkedin.kafka.cruisecontrol.common.KafkaCruiseControlThreadFactory.lambda$newThread$1(KafkaCruiseControlThreadFactory.java:43)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+[2023-07-20 16:52:04,594] ERROR Error building replica metric sample for __consumer_offsets-32, replica: localhost:9092 (id: 0 rack: null). Error: Broker metric ALL_TOPIC_FETCH_FROM_FOLLOWER_BYTES_OUT does not exist. (com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor)
+java.lang.IllegalArgumentException: Broker metric ALL_TOPIC_FETCH_FROM_FOLLOWER_BYTES_OUT does not exist.
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.holder.BrokerLoad.brokerMetric(BrokerLoad.java:104)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingUtils$BrokerMetrics.<init>(SamplingUtils.java:146)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingUtils.estimateCpuUtil(SamplingUtils.java:111)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingUtils.buildReplicaMetricSample(SamplingUtils.java:318)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor.addReplicaMetricSamples(CruiseControlMetricsProcessor.java:382)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor.process(CruiseControlMetricsProcessor.java:316)
+	at io.confluent.cruisecontrol.metricsreporter.ConfluentMetricsSamplerBase.getSamples(ConfluentMetricsSamplerBase.java:238)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingFetcher.fetchSamples(SamplingFetcher.java:105)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingFetcher.fetchMetricsForAssignedPartitions(SamplingFetcher.java:87)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.MetricFetcher.call(MetricFetcher.java:24)
+	at com.linkedin.kafka.cruisecontrol.monitor.sampling.MetricFetcher.call(MetricFetcher.java:16)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at com.linkedin.kafka.cruisecontrol.common.KafkaCruiseControlThreadFactory.lambda$newThread$1(KafkaCruiseControlThreadFactory.java:43)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+[2023-07-20 16:52:04,595] INFO Already logged 10 errors. Switching to trace level logging now. (com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor)
+[2023-07-20 16:52:04,598] WARN Skip generating metric sample for broker 0 because there are not enough topic metrics to generate broker metrics. (com.linkedin.kafka.cruisecontrol.monitor.sampling.SamplingUtils)
+[2023-07-20 16:52:04,598] INFO Generated 0(64 skipped) replica metrics samples, 64(3 skipped) partition metric samples and 0(1 skipped) broker metric samples from timestamp 1689846600091 to timestamp 1689846720106. (com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor)
+[2023-07-20 16:52:37,404] INFO Skipping goal violation detection due to previous new broker change (com.linkedin.kafka.cruisecontrol.detector.GoalViolationDetector)
+[2023-07-20 16:53:37,415] INFO Skipping goal violation detection due to previous new broker change (com.linkedin.kafka.cruisecontrol.detector.GoalViolationDetector)
+[2023-07-20 16:54:37,404] INFO Skipping goal violation detection due to previous new broker change (com.linkedin.kafka.cruisecontrol.detector.GoalViolationDetector)
+[2023-07-20 16:55:04,576] INFO Generated 67 replica metrics samples, 67 partition metric samples and 1 broker metric samples from timestamp 1689846780089 to timestamp 1689846900108. (com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor)
+[2023-07-20 16:55:04,576] INFO REPLICA Aggregator rolled out 1 new windows, reset 7 windows, current window range [1689845040000, 1689847200000], abandon 0 samples. (com.linkedin.cruisecontrol.monitor.sampling.aggregator.MetricSampleAggregator)
+[2023-07-20 16:55:04,577] INFO PARTITION Aggregator rolled out 1 new windows, reset 1 windows, current window range [1689845040000, 1689847200000], abandon 0 samples. (com.linkedin.cruisecontrol.monitor.sampling.aggregator.MetricSampleAggregator)
+[2023-07-20 16:55:37,404] INFO Skipping goal violation detection due to previous new broker change (com.linkedin.kafka.cruisecontrol.detector.GoalViolationDetector)
+[2023-07-20 16:56:37,404] INFO Skipping goal violation detection due to previous new broker change (com.linkedin.kafka.cruisecontrol.detector.GoalViolationDetector)
+[2023-07-20 16:57:37,404] INFO Skipping goal violation detection due to previous new broker change (com.linkedin.kafka.cruisecontrol.detector.GoalViolationDetector)
+[2023-07-20 16:58:04,578] INFO Generated 67 replica metrics samples, 67 partition metric samples and 1 broker metric samples from timestamp 1689846960088 to timestamp 1689847080104. (com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor)
+[2023-07-20 16:58:37,414] INFO Skipping goal violation detection due to previous new broker change (com.linkedin.kafka.cruisecontrol.detector.GoalViolationDetector)
+[2023-07-20 16:59:37,404] INFO Skipping goal violation detection due to previous new broker change (com.linkedin.kafka.cruisecontrol.detector.GoalViolationDetector)

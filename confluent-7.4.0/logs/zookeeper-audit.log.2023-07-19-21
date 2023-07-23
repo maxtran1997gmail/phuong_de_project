@@ -1,0 +1,2 @@
+2023-07-19 21:48:20,245 INFO audit.Log4jAuditLogger: session=0x10001de33910000	user=127.0.0.1	ip=127.0.0.1	operation=setData	znode=/latest_producer_id_block	result=success
+2023-07-19 21:52:39,246 INFO audit.Log4jAuditLogger: user=tmph2003	operation=serverStop	result=invoked

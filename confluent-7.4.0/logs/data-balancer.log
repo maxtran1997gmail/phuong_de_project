@@ -1,0 +1,499 @@
+[2023-07-22 22:00:35,586] INFO Generated 121 replica metrics samples, 121 partition metric samples and 1 broker metric samples from timestamp 1690037859252 to timestamp 1690037979263. (com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor)
+[2023-07-22 22:03:35,583] INFO Generated 121 replica metrics samples, 121 partition metric samples and 1 broker metric samples from timestamp 1690038039251 to timestamp 1690038159264. (com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor)
+[2023-07-22 22:03:35,583] INFO REPLICA Aggregator rolled out 1 new windows, reset 1 windows, current window range [1690036200000, 1690038360000], abandon 360 samples. (com.linkedin.cruisecontrol.monitor.sampling.aggregator.MetricSampleAggregator)
+[2023-07-22 22:03:35,583] INFO PARTITION Aggregator rolled out 1 new windows, reset 1 windows, current window range [1690036200000, 1690038360000], abandon 360 samples. (com.linkedin.cruisecontrol.monitor.sampling.aggregator.MetricSampleAggregator)
+[2023-07-22 22:04:10,363] INFO Generated cluster model in 1 ms with broker strategies: {0=ALIVE}. (com.linkedin.kafka.cruisecontrol.monitor.LoadMonitor)
+[2023-07-22 22:04:10,366] INFO Initiated ReplicaDistributionGoal with lower limit 98 and upper limit 144 (isTriggeredByGoalViolation true) (com.linkedin.kafka.cruisecontrol.analyzer.goals.ReplicaDistributionAbstractGoal)
+[2023-07-22 22:04:10,366] INFO Initiated DiskUsageDistributionGoal with percentage thresholds (Resource Percentage Thresholds for disk - low utilization 20.00%, mean utilization - 0.00%, lower and upper limits - 0.00% and 0.00%) and absolute thresholds (Resource Value Thresholds for disk - low utilization threshold 206203.69, mean utilization threshold 9.79, lower limit: 7.94, upper limit: 11.64) as part of evaluating whether to trigger the even-cluster load task (all distribution statistics ResourceDistributionStatsSnapshot{minBrokerResourceUnderLowerLimitOpt=null, maxBrokerResourceOverUpperLimitOpt=null, numBrokersUnderLowUtilizationThreshold=1, resourceValueThresholds=Resource Value Thresholds for disk - low utilization threshold 206203.69, mean utilization threshold 9.79, lower limit: 7.94, upper limit: 11.64}) (com.linkedin.kafka.cruisecontrol.analyzer.goals.util.ResourceDistributionLogger)
+[2023-07-22 22:04:10,366] INFO Goal violation detector did not detect any violated goals. (com.linkedin.kafka.cruisecontrol.detector.GoalViolationDetector)
+[2023-07-22 22:04:10,366] INFO Cleaned suspended topic partitions for self-healing since history epoch is updated from 4 to 5 (com.linkedin.kafka.cruisecontrol.ProposalGenerator)
+[2023-07-22 22:04:10,366] INFO Goal violation detection finished. (com.linkedin.kafka.cruisecontrol.detector.GoalViolationDetector)
+[2023-07-22 22:06:35,705] INFO Generated 121 replica metrics samples, 121 partition metric samples and 1 broker metric samples from timestamp 1690038219251 to timestamp 1690038339262. (com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor)
+[2023-07-22 22:09:46,686] INFO Scheduling SBC Resignation (io.confluent.databalancer.SbcDataBalanceManager)
+[2023-07-22 22:09:46,700] INFO Handling event SbcResignationEvent-4 (io.confluent.databalancer.event.SbcEvent)
+[2023-07-22 22:09:46,705] INFO SBC Resignation initiated. (io.confluent.databalancer.event.SbcEvent)
+[2023-07-22 22:09:46,730] INFO DataBalancer: Scheduling DataBalanceEngine Shutdown due to CONTROLLER_FAILS_OVER. (io.confluent.databalancer.ConfluentDataBalanceEngine)
+[2023-07-22 22:09:46,751] INFO Databalancer: Shutting down DataBalanceEngine on receiving balancer event CONTROLLER_FAILS_OVER (io.confluent.databalancer.ConfluentDataBalanceEngine)
+[2023-07-22 22:09:46,751] INFO DataBalancer: Commencing DataBalanceEngine Shutdown due to CONTROLLER_FAILS_OVER (io.confluent.databalancer.ConfluentDataBalanceEngine)
+[2023-07-22 22:09:46,758] INFO The executor was requested to stop the ongoing proposal execution and cancel the existing reassignments. Reason: DataBalanceEngine Shutdown due to CONTROLLER_FAILS_OVER (com.linkedin.kafka.cruisecontrol.executor.Executor)
+[2023-07-22 22:09:46,761] INFO Shutting down Kafka Cruise Control... (com.linkedin.kafka.cruisecontrol.KafkaCruiseControl)
+[2023-07-22 22:09:46,766] INFO Thread SBK_TopicPartitionMovementsCleaner-0 exited (io.confluent.cruisecontrol.analyzer.history.GoalOptimizationHistory)
+[2023-07-22 22:09:46,830] INFO Thread SBK_SuspendedTopicPartitionsCleaner-0 exited (io.confluent.cruisecontrol.analyzer.history.GoalOptimizationHistory)
+[2023-07-22 22:09:46,855] ERROR Registering EvenClusterLoadEvent STOPPED with exception org.apache.kafka.common.errors.BalancerOperationFailedException. (io.confluent.databalancer.operation.EvenClusterLoadStateManager)
+org.apache.kafka.common.errors.BalancerOperationFailedException: Self healing stopped due to balancer shutting down.
+[2023-07-22 22:09:46,863] INFO Shutting down StateMachineProcessor event loop. (com.linkedin.kafka.cruisecontrol.statemachine.StateMachineProcessor)
+[2023-07-22 22:09:47,209] ERROR Error when describing config for resource: [ConfigResource(type=TOPIC, name='_confluent-ksql-default__command_topic'), ConfigResource(type=TOPIC, name='_confluent_balancer_api_state'), ConfigResource(type=TOPIC, name='default_ksql_processing_log'), ConfigResource(type=TOPIC, name='avro_data'), ConfigResource(type=TOPIC, name='_schemas'), ConfigResource(type=TOPIC, name='_schema_encoders'), ConfigResource(type=TOPIC, name='__transaction_state'), ConfigResource(type=TOPIC, name='SOURCE_DEFAULT_VALUE'), ConfigResource(type=TOPIC, name='_confluent-command'), ConfigResource(type=TOPIC, name='_confluent-telemetry-metrics'), ConfigResource(type=TOPIC, name='json_data'), ConfigResource(type=TOPIC, name='__consumer_offsets')] (com.linkedin.kafka.cruisecontrol.common.BatchedConfigsFetcher)
+java.util.concurrent.ExecutionException: org.apache.kafka.common.errors.UnknownServerException: The server experienced an unexpected error when processing the request.
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:395)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2022)
+	at org.apache.kafka.common.internals.KafkaFutureImpl.get(KafkaFutureImpl.java:180)
+	at com.linkedin.kafka.cruisecontrol.common.BatchedConfigsFetcher.lambda$getConfigs$2(BatchedConfigsFetcher.java:201)
+	at io.confluent.databalancer.utils.OperationRetryer.runWithRetries(OperationRetryer.java:54)
+	at com.linkedin.kafka.cruisecontrol.common.BatchedConfigsFetcher.getConfigs(BatchedConfigsFetcher.java:196)
+	at com.linkedin.kafka.cruisecontrol.common.MetadataClient.maybeFetchTopicPlacements(MetadataClient.java:493)
+	at com.linkedin.kafka.cruisecontrol.common.MetadataClient.doRefreshMetadata(MetadataClient.java:456)
+	at com.linkedin.kafka.cruisecontrol.common.MetadataClient.maybeRefreshMetadata(MetadataClient.java:200)
+	at com.linkedin.kafka.cruisecontrol.common.MetadataClient.maybeRefreshMetadata(MetadataClient.java:162)
+	at com.linkedin.kafka.cruisecontrol.monitor.task.SamplingTask.run(SamplingTask.java:49)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at com.linkedin.kafka.cruisecontrol.common.KafkaCruiseControlThreadFactory.lambda$newThread$1(KafkaCruiseControlThreadFactory.java:43)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: org.apache.kafka.common.errors.UnknownServerException: The server experienced an unexpected error when processing the request.
+[2023-07-22 22:09:47,220] INFO Will be retrying operation Get entity configuration. in 1000 ms (io.confluent.databalancer.utils.OperationRetryer)
+[2023-07-22 22:09:47,357] INFO Shutting down load monitor. (com.linkedin.kafka.cruisecontrol.monitor.LoadMonitor)
+[2023-07-22 22:09:47,357] INFO Shutting down load monitor task runner. (com.linkedin.kafka.cruisecontrol.monitor.task.LoadMonitorTaskRunner)
+[2023-07-22 22:09:47,742] INFO Scheduling SBC Election (io.confluent.databalancer.SbcDataBalanceManager)
+[2023-07-22 22:09:47,742] INFO Handling event SbcZkStartupEvent-5 (io.confluent.databalancer.event.SbcEvent)
+[2023-07-22 22:09:47,750] INFO Balancer Status state for brokers [0] transitioned from BALANCER_EVENT_RECEIVED to STARTING due to event INITIALIZING_CRUISE_CONTROL. (io.confluent.databalancer.operation.StateMachine)
+[2023-07-22 22:09:47,751] INFO DataBalancer: Activating SBC with AliveBrokersSnapshot{liveBrokerIdsAndEpochs={0=401}, brokerReplicaExclusions=[], demotedBrokers=[]} (io.confluent.databalancer.KafkaDataBalanceManager)
+[2023-07-22 22:09:47,751] INFO DataBalancer: Scheduling DataBalanceEngine Startup (io.confluent.databalancer.ConfluentDataBalanceEngine)
+[2023-07-22 22:09:48,358] WARN Executor service failed to shutdown in 1000 ms. (com.linkedin.kafka.cruisecontrol.KafkaCruiseControlUtils)
+[2023-07-22 22:09:48,359] INFO Shutting down metric fetcher manager. (com.linkedin.kafka.cruisecontrol.monitor.sampling.MetricFetcherManager)
+[2023-07-22 22:09:48,406] INFO Generated 121 replica metrics samples, 121 partition metric samples and 1 broker metric samples from timestamp 1690038399258 to timestamp 1690038585713. (com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor)
+[2023-07-22 22:09:48,407] INFO REPLICA Aggregator rolled out 1 new windows, reset 1 windows, current window range [1690036560000, 1690038720000], abandon 240 samples. (com.linkedin.cruisecontrol.monitor.sampling.aggregator.MetricSampleAggregator)
+[2023-07-22 22:09:48,408] INFO PARTITION Aggregator rolled out 1 new windows, reset 1 windows, current window range [1690036560000, 1690038720000], abandon 240 samples. (com.linkedin.cruisecontrol.monitor.sampling.aggregator.MetricSampleAggregator)
+[2023-07-22 22:09:48,449] INFO Metric fetcher manager shutdown completed. (com.linkedin.kafka.cruisecontrol.monitor.sampling.MetricFetcherManager)
+[2023-07-22 22:09:48,449] INFO Load monitor task runner shutdown completed. (com.linkedin.kafka.cruisecontrol.monitor.task.LoadMonitorTaskRunner)
+[2023-07-22 22:09:48,449] INFO Load Monitor shutdown completed. (com.linkedin.kafka.cruisecontrol.monitor.LoadMonitor)
+[2023-07-22 22:09:48,449] INFO Shutting down executor. (com.linkedin.kafka.cruisecontrol.executor.Executor)
+[2023-07-22 22:09:48,459] INFO Executor shutdown completed. (com.linkedin.kafka.cruisecontrol.executor.Executor)
+[2023-07-22 22:09:48,459] INFO Shutting down anomaly detector. (com.linkedin.kafka.cruisecontrol.detector.AnomalyDetector)
+[2023-07-22 22:09:48,459] INFO [SBK_BrokerFailureDetector]: Shutting down (com.linkedin.kafka.cruisecontrol.detector.BrokerFailureDetector)
+[2023-07-22 22:09:48,471] INFO Broker failure detector interrupted. Exiting the doWork loop. (com.linkedin.kafka.cruisecontrol.detector.BrokerFailureDetector)
+[2023-07-22 22:09:48,471] INFO [SBK_BrokerFailureDetector]: Stopped (com.linkedin.kafka.cruisecontrol.detector.BrokerFailureDetector)
+[2023-07-22 22:09:48,471] INFO [SBK_BrokerFailureDetector]: Shutdown completed (com.linkedin.kafka.cruisecontrol.detector.BrokerFailureDetector)
+[2023-07-22 22:09:48,491] INFO Anomaly handler exited. (com.linkedin.kafka.cruisecontrol.detector.AnomalyDetector)
+[2023-07-22 22:09:48,491] INFO Anomaly detector shutdown completed. (com.linkedin.kafka.cruisecontrol.detector.AnomalyDetector)
+[2023-07-22 22:09:48,495] INFO Kafka Cruise Control shutdown completed. (com.linkedin.kafka.cruisecontrol.KafkaCruiseControl)
+[2023-07-22 22:09:48,529] INFO Balancer Status state for brokers [0] transitioned from RUNNING to STOPPED due to event CONTROLLER_FAILS_OVER. (io.confluent.databalancer.operation.StateMachine)
+[2023-07-22 22:09:48,529] INFO DataBalancer: DataBalanceEngine Shutdown due to CONTROLLER_FAILS_OVER completed. (io.confluent.databalancer.ConfluentDataBalanceEngine)
+[2023-07-22 22:09:48,534] INFO DataBalancer: Bootstrap server endpoint is Endpoint(listenerName='PLAINTEXT', securityProtocol=PLAINTEXT, host='localhost', port=9092) (io.confluent.databalancer.startup.CruiseControlStartable)
+[2023-07-22 22:09:48,557] INFO DataBalancer: BOOTSTRAP_SERVERS determined to be localhost:9092 (io.confluent.databalancer.startup.CruiseControlStartable)
+[2023-07-22 22:09:48,569] INFO KafkaCruiseControlConfig values: 
+	anomaly.detection.allow.capacity.estimation = true
+	anomaly.detection.goals = [io.confluent.cruisecontrol.analyzer.goals.ReplicaPlacementGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.RackAwareGoal, io.confluent.cruisecontrol.analyzer.goals.MaxReplicaMovementParallelismGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.ReplicaCapacityGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.DiskCapacityGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.NetworkInboundCapacityGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.NetworkOutboundCapacityGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.ProducerInboundCapacityGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.ReplicaDistributionGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.DiskUsageDistributionGoal]
+	anomaly.detection.interval.ms = 60000
+	anomaly.notifier.class = class com.linkedin.kafka.cruisecontrol.detector.notifier.SelfHealingNotifier
+	bootstrap.servers = [localhost:9092]
+	broker.capacity.config.resolver.class = class com.linkedin.kafka.cruisecontrol.config.BrokerCapacityResolver
+	broker.failure.alert.threshold.ms = 0
+	broker.failure.exclude.recently.removed.brokers = true
+	broker.failure.self.healing.threshold.ms = 3600000
+	broker.metric.sample.aggregator.completeness.cache.size = 5
+	broker.metric.sample.store.topic = _confluent_balancer_broker_samples
+	broker.metrics.window.ms = 360000
+	broker.removal.shutdown.timeout.ms = 600000
+	broker.replica.exclusion.timeout.ms = 120000
+	bytes.cpu.contribution.weight = 0.2
+	calculated.throttle.ratio = 0.8
+	cdbe.shutdown.wait.ms = 15000
+	client.id = kafka-cruise-control
+	connections.max.idle.ms = 540000
+	cpu.balance.threshold = 1.1
+	cpu.capacity.threshold = 1.0
+	cpu.low.utilization.threshold = 0.2
+	cpu.utilization.detector.duration.ms = 600000
+	cpu.utilization.detector.overutilization.threshold = 80.0
+	cpu.utilization.detector.underutilization.threshold = 50.0
+	default.api.timeout.ms = 60000
+	default.replica.movement.strategies = [com.linkedin.kafka.cruisecontrol.executor.strategy.BaseReplicaMovementStrategy]
+	describe.broker.exclusion.timeout.ms = 60000
+	describe.cluster.response.timeout.ms = 30000
+	describe.configs.batch.size = 1000
+	describe.configs.response.timeout.ms = 30000
+	describe.topics.response.timeout.ms = 30000
+	disk.balance.threshold = 1.1
+	disk.low.utilization.threshold = 0.2
+	disk.max.load = 0.85
+	disk.min.free.space.gb = 0
+	disk.read.ratio = 0.2
+	disk.utilization.detector.duration.ms = 600000
+	disk.utilization.detector.overutilization.threshold = 80.0
+	disk.utilization.detector.reserved.capacity = 150000.0
+	disk.utilization.detector.underutilization.threshold = 35.0
+	execution.progress.check.interval.ms = 7000
+	executor.leader.action.timeout.ms = 180000
+	executor.notifier.class = class com.linkedin.kafka.cruisecontrol.executor.ExecutorNoopNotifier
+	executor.reservation.refresh.time.ms = 60000
+	follower.network.inbound.weight.for.cpu.util = 0.15
+	goal.balancedness.priority.weight = 1.1
+	goal.balancedness.strictness.weight = 1.5
+	goal.violation.delay.on.new.brokers.ms = 1800000
+	goal.violation.distribution.threshold.multiplier = 1.1
+	goal.violation.exclude.recently.removed.brokers = true
+	goals = [com.linkedin.kafka.cruisecontrol.analyzer.goals.MovementExclusionGoal, io.confluent.cruisecontrol.analyzer.goals.ReplicaPlacementGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.RackAwareGoal, io.confluent.cruisecontrol.analyzer.goals.MaxReplicaMovementParallelismGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.ReplicaCapacityGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.DiskCapacityGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.NetworkInboundCapacityGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.NetworkOutboundCapacityGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.ProducerInboundCapacityGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.SystemTopicEvenDistributionGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.ReplicaDistributionGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.DiskUsageDistributionGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.LeaderReplicaDistributionGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.NetworkInboundUsageDistributionGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.NetworkOutboundUsageDistributionGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.CpuUsageDistributionGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.TopicReplicaDistributionGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.LeaderBytesInDistributionGoal]
+	hot.partition.capacity.utilization.threshold = 0.2
+	incremental.balancing.cpu.top.proposal.tracking.enabled = false
+	incremental.balancing.cpu.top.proposal.tracking.num.proposals = 15
+	incremental.balancing.enabled = false
+	incremental.balancing.goals = [com.linkedin.kafka.cruisecontrol.analyzer.goals.MovementExclusionGoal, io.confluent.cruisecontrol.analyzer.goals.ReplicaPlacementGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.RackAwareGoal, io.confluent.cruisecontrol.analyzer.goals.MaxReplicaMovementParallelismGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.ReplicaCapacityGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.DiskCapacityGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.NetworkInboundCapacityGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.NetworkOutboundCapacityGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.ProducerInboundCapacityGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.IncrementalCPUResourceDistributionGoal]
+	incremental.balancing.lower.bound = 0.02
+	incremental.balancing.step.ratio = 0.2
+	intra.broker.goals = [com.linkedin.kafka.cruisecontrol.analyzer.goals.IntraBrokerDiskCapacityGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.IntraBrokerDiskUsageDistributionGoal]
+	invalid.replica.assignment.retry.timeout.ms = 300000
+	leader.network.inbound.weight.for.cpu.util = 0.7
+	leader.network.outbound.weight.for.cpu.util = 0.15
+	leader.replica.count.balance.threshold = 1.1
+	logdir.response.timeout.ms = 30000
+	max.allowed.extrapolations.per.broker = 5
+	max.allowed.extrapolations.per.partition = 5
+	max.capacity.balancing.delta.percentage = 0.0
+	max.replicas = 2147483647
+	max.volume.throughput.mb = 0
+	metadata.client.timeout.ms = 180000
+	metadata.ttl = 10000
+	metric.sampler.class = class io.confluent.cruisecontrol.metricsreporter.ConfluentTelemetryReporterSampler
+	metric.sampler.partition.assignor.class = class com.linkedin.kafka.cruisecontrol.monitor.sampling.DefaultMetricSamplerPartitionAssignor
+	metric.sampling.interval.ms = 180000
+	min.samples.per.broker.metrics.window = 1
+	min.samples.per.partition.metrics.window = 1
+	min.valid.partition.ratio = 0.95
+	network.in.max.bytes.per.second = 9223372036854775807
+	network.inbound.balance.threshold = 1.1
+	network.inbound.capacity.threshold = 0.8
+	network.inbound.low.utilization.threshold = 0.2
+	network.out.max.bytes.per.second = 9223372036854775807
+	network.outbound.balance.threshold = 1.1
+	network.outbound.capacity.threshold = 0.8
+	network.outbound.low.utilization.threshold = 0.2
+	num.broker.metrics.windows = 20
+	num.cached.recent.anomaly.states = 10
+	num.concurrent.intra.broker.partition.movements = 2
+	num.concurrent.leader.movements = 1000
+	num.concurrent.partition.movements.per.broker = 5
+	num.metric.fetchers = 1
+	num.partition.metrics.windows = 6
+	partition.metric.sample.aggregator.completeness.cache.size = 5
+	partition.metric.sample.store.topic = _confluent_balancer_partition_samples
+	partition.metrics.window.ms = 360000
+	plan.computation.retry.timeout.ms = 3600000
+	producer.in.max.bytes.per.second = 9223372036854775807
+	producer.inbound.capacity.threshold = 0.9
+	read.throughput.multiplier = 1.0
+	receive.buffer.bytes = 32768
+	reconnect.backoff.ms = 50
+	removal.history.retention.time.ms = 86400000
+	replica.count.balance.threshold = 1.1
+	replica.movement.strategies = [com.linkedin.kafka.cruisecontrol.executor.strategy.PostponeUrpReplicaMovementStrategy, com.linkedin.kafka.cruisecontrol.executor.strategy.PrioritizeLargeReplicaMovementStrategy, com.linkedin.kafka.cruisecontrol.executor.strategy.PrioritizeSmallReplicaMovementStrategy, com.linkedin.kafka.cruisecontrol.executor.strategy.BaseReplicaMovementStrategy]
+	request.cpu.contribution.weight = 0.8
+	request.timeout.ms = 30000
+	resource.utilization.detector.enabled = false
+	resource.utilization.detector.interval.ms = 60000
+	sampling.allow.cpu.capacity.estimation = true
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	self.healing.broker.failure.enabled = true
+	self.healing.goal.violation.enabled = false
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	startup.retry.delay.minutes = 5
+	startup.retry.max.hours = 2
+	static.throttle.rate.override.enabled = false
+	throttle.bytes.per.second = 10485760
+	topic.partition.maximum.movements = 5
+	topic.partition.movement.expiration.ms = 3600000
+	topic.partition.suspension.ms = 10800000
+	topic.replica.count.balance.threshold = 3.0
+	topics.excluded.from.partition.movement = 
+	write.throughput.multiplier = 1.0
+	zookeeper.connect = localhost:2181
+	zookeeper.security.enabled = false
+ (com.linkedin.kafka.cruisecontrol.config.KafkaCruiseControlConfig)
+[2023-07-22 22:09:48,569] INFO DataBalancer: Instantiating DataBalanceEngine (io.confluent.databalancer.ConfluentDataBalanceEngine)
+[2023-07-22 22:09:48,574] INFO DataBalancer: Checking startup components (io.confluent.databalancer.startup.CruiseControlStartable)
+[2023-07-22 22:09:48,574] INFO DataBalancer: Checking startup component StartupComponent ConfluentTelemetryReporterSampler (io.confluent.databalancer.startup.StartupComponents)
+[2023-07-22 22:09:48,605] INFO Metric Reporter Sampler ready to start. (io.confluent.cruisecontrol.metricsreporter.ConfluentMetricsSamplerBase)
+[2023-07-22 22:09:48,605] INFO DataBalancer: Startup component StartupComponent ConfluentTelemetryReporterSampler ready to proceed (io.confluent.databalancer.startup.StartupComponents)
+[2023-07-22 22:09:48,605] INFO DataBalancer: Checking startup component StartupComponent SampleStoreTopicCleanUp (io.confluent.databalancer.startup.StartupComponents)
+[2023-07-22 22:09:48,617] INFO DataBalancer: No topics to be deleted. (com.linkedin.kafka.cruisecontrol.SbkTopicUtils)
+[2023-07-22 22:09:48,621] INFO DataBalancer: Startup component StartupComponent SampleStoreTopicCleanUp ready to proceed (io.confluent.databalancer.startup.StartupComponents)
+[2023-07-22 22:09:48,621] INFO DataBalancer: Checking startup component StartupComponent ApiStatePersistenceStore (io.confluent.databalancer.startup.StartupComponents)
+[2023-07-22 22:09:48,648] INFO DataBalancer: Adjusting topic _confluent_balancer_api_state configuration (com.linkedin.kafka.cruisecontrol.SbkTopicUtils)
+[2023-07-22 22:09:48,811] INFO Confirmed that topic _confluent_balancer_api_state exists. (io.confluent.databalancer.persistence.ApiStatePersistenceStore)
+[2023-07-22 22:09:48,811] INFO DataBalancer: Startup component StartupComponent ApiStatePersistenceStore ready to proceed (io.confluent.databalancer.startup.StartupComponents)
+[2023-07-22 22:09:48,811] INFO DataBalancer: Startup checking succeeded, proceeding to full validation. (io.confluent.databalancer.startup.StartupComponents)
+[2023-07-22 22:09:48,811] INFO DataBalancer: Creating CruiseControl (io.confluent.databalancer.startup.CruiseControlStartable)
+[2023-07-22 22:09:48,885] INFO DataBalancer: Bootstrap server endpoint is Endpoint(listenerName='PLAINTEXT', securityProtocol=PLAINTEXT, host='localhost', port=9092) (io.confluent.databalancer.startup.CruiseControlStartable)
+[2023-07-22 22:09:48,999] INFO Started DataBalancer Api State Persistence Store (io.confluent.databalancer.persistence.ApiStatePersistenceStore)
+[2023-07-22 22:09:49,001] INFO Starting Kafka Cruise Control... (com.linkedin.kafka.cruisecontrol.KafkaCruiseControl)
+[2023-07-22 22:09:49,003] INFO Initializing DataBalancer with goals UpdatableSbcGoalsConfig{rebalancingGoals=GoalsConfig{requirements=(requiredNumWindows=3, minMonitoredPartitionPercentage=0.950, includedAllTopics=true, fetchTopicPlacements=true), goals=[MovementExclusionGoal, ReplicaPlacementGoal, RackAwareGoal, MaxReplicaMovementParallelismGoal, ReplicaCapacityGoal, DiskCapacityGoal, NetworkInboundCapacityGoal, NetworkOutboundCapacityGoal, ProducerInboundCapacityGoal, SystemTopicEvenDistributionGoal, ReplicaDistributionGoal, DiskUsageDistributionGoal, LeaderReplicaDistributionGoal, NetworkInboundUsageDistributionGoal, NetworkOutboundUsageDistributionGoal, CpuUsageDistributionGoal, TopicReplicaDistributionGoal, LeaderBytesInDistributionGoal]}, triggeringGoals=GoalsConfig{requirements=(requiredNumWindows=1, minMonitoredPartitionPercentage=0.950, includedAllTopics=true, fetchTopicPlacements=true), goals=[ReplicaPlacementGoal, RackAwareGoal, MaxReplicaMovementParallelismGoal, ReplicaCapacityGoal, DiskCapacityGoal, NetworkInboundCapacityGoal, NetworkOutboundCapacityGoal, ProducerInboundCapacityGoal, ReplicaDistributionGoal, DiskUsageDistributionGoal]}, incrementalBalancingEnabled=false, incrementalBalancingGoals=GoalsConfig{requirements=(requiredNumWindows=1, minMonitoredPartitionPercentage=0.950, includedAllTopics=true, fetchTopicPlacements=true), goals=[MovementExclusionGoal, ReplicaPlacementGoal, RackAwareGoal, MaxReplicaMovementParallelismGoal, ReplicaCapacityGoal, DiskCapacityGoal, NetworkInboundCapacityGoal, NetworkOutboundCapacityGoal, ProducerInboundCapacityGoal, IncrementalCPUResourceDistributionGoal]}} (com.linkedin.kafka.cruisecontrol.KafkaCruiseControl)
+[2023-07-22 22:09:49,040] INFO CruiseControl: Attempting to configure Broker Capacity from config properties (com.linkedin.kafka.cruisecontrol.config.BrokerCapacityResolver)
+[2023-07-22 22:09:49,043] INFO CruiseControl: Attempting to configure Broker Capacity from config properties (com.linkedin.kafka.cruisecontrol.config.BrokerCapacityResolver)
+[2023-07-22 22:09:49,149] INFO Set throttle rate 10485760. Will not override static throttles when setting the rate. (com.linkedin.kafka.cruisecontrol.executor.ReplicationThrottleHelper)
+[2023-07-22 22:09:49,280] INFO Removed throttled replicas config for topics: [_confluent-ksql-default__command_topic, _confluent_balancer_api_state, default_ksql_processing_log, avro_data, _schemas, _schema_encoders, __transaction_state, SOURCE_DEFAULT_VALUE, _confluent-command, _confluent-telemetry-metrics, json_data, __consumer_offsets] (com.linkedin.kafka.cruisecontrol.executor.ReplicationThrottleHelper)
+[2023-07-22 22:09:49,315] INFO Removed throttle rate config from 0 brokers (com.linkedin.kafka.cruisecontrol.executor.ReplicationThrottleHelper)
+[2023-07-22 22:09:49,316] INFO KafkaCruiseControlConfig values: 
+	anomaly.detection.allow.capacity.estimation = true
+	anomaly.detection.goals = [io.confluent.cruisecontrol.analyzer.goals.ReplicaPlacementGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.RackAwareGoal, io.confluent.cruisecontrol.analyzer.goals.MaxReplicaMovementParallelismGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.ReplicaCapacityGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.DiskCapacityGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.NetworkInboundCapacityGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.NetworkOutboundCapacityGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.ProducerInboundCapacityGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.ReplicaDistributionGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.DiskUsageDistributionGoal]
+	anomaly.detection.interval.ms = 60000
+	anomaly.notifier.class = class com.linkedin.kafka.cruisecontrol.detector.notifier.SelfHealingNotifier
+	bootstrap.servers = [localhost:9092]
+	broker.capacity.config.resolver.class = class com.linkedin.kafka.cruisecontrol.config.BrokerCapacityResolver
+	broker.failure.alert.threshold.ms = 0
+	broker.failure.exclude.recently.removed.brokers = true
+	broker.failure.self.healing.threshold.ms = 3600000
+	broker.metric.sample.aggregator.completeness.cache.size = 5
+	broker.metric.sample.store.topic = _confluent_balancer_broker_samples
+	broker.metrics.window.ms = 360000
+	broker.removal.shutdown.timeout.ms = 600000
+	broker.replica.exclusion.timeout.ms = 120000
+	bytes.cpu.contribution.weight = 0.2
+	calculated.throttle.ratio = 0.8
+	cdbe.shutdown.wait.ms = 15000
+	client.id = kafka-cruise-control
+	connections.max.idle.ms = 540000
+	cpu.balance.threshold = 1.1
+	cpu.capacity.threshold = 1.0
+	cpu.low.utilization.threshold = 0.2
+	cpu.utilization.detector.duration.ms = 600000
+	cpu.utilization.detector.overutilization.threshold = 80.0
+	cpu.utilization.detector.underutilization.threshold = 50.0
+	default.api.timeout.ms = 60000
+	default.replica.movement.strategies = [com.linkedin.kafka.cruisecontrol.executor.strategy.BaseReplicaMovementStrategy]
+	describe.broker.exclusion.timeout.ms = 60000
+	describe.cluster.response.timeout.ms = 30000
+	describe.configs.batch.size = 1000
+	describe.configs.response.timeout.ms = 30000
+	describe.topics.response.timeout.ms = 30000
+	disk.balance.threshold = 1.1
+	disk.low.utilization.threshold = 0.2
+	disk.max.load = 0.85
+	disk.min.free.space.gb = 0
+	disk.read.ratio = 0.2
+	disk.utilization.detector.duration.ms = 600000
+	disk.utilization.detector.overutilization.threshold = 80.0
+	disk.utilization.detector.reserved.capacity = 150000.0
+	disk.utilization.detector.underutilization.threshold = 35.0
+	execution.progress.check.interval.ms = 7000
+	executor.leader.action.timeout.ms = 180000
+	executor.notifier.class = class com.linkedin.kafka.cruisecontrol.executor.ExecutorNoopNotifier
+	executor.reservation.refresh.time.ms = 60000
+	follower.network.inbound.weight.for.cpu.util = 0.15
+	goal.balancedness.priority.weight = 1.1
+	goal.balancedness.strictness.weight = 1.5
+	goal.violation.delay.on.new.brokers.ms = 1800000
+	goal.violation.distribution.threshold.multiplier = 1.1
+	goal.violation.exclude.recently.removed.brokers = true
+	goals = [com.linkedin.kafka.cruisecontrol.analyzer.goals.MovementExclusionGoal, io.confluent.cruisecontrol.analyzer.goals.ReplicaPlacementGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.RackAwareGoal, io.confluent.cruisecontrol.analyzer.goals.MaxReplicaMovementParallelismGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.ReplicaCapacityGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.DiskCapacityGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.NetworkInboundCapacityGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.NetworkOutboundCapacityGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.ProducerInboundCapacityGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.SystemTopicEvenDistributionGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.ReplicaDistributionGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.DiskUsageDistributionGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.LeaderReplicaDistributionGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.NetworkInboundUsageDistributionGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.NetworkOutboundUsageDistributionGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.CpuUsageDistributionGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.TopicReplicaDistributionGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.LeaderBytesInDistributionGoal]
+	hot.partition.capacity.utilization.threshold = 0.2
+	incremental.balancing.cpu.top.proposal.tracking.enabled = false
+	incremental.balancing.cpu.top.proposal.tracking.num.proposals = 15
+	incremental.balancing.enabled = false
+	incremental.balancing.goals = [com.linkedin.kafka.cruisecontrol.analyzer.goals.MovementExclusionGoal, io.confluent.cruisecontrol.analyzer.goals.ReplicaPlacementGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.RackAwareGoal, io.confluent.cruisecontrol.analyzer.goals.MaxReplicaMovementParallelismGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.ReplicaCapacityGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.DiskCapacityGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.NetworkInboundCapacityGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.NetworkOutboundCapacityGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.ProducerInboundCapacityGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.IncrementalCPUResourceDistributionGoal]
+	incremental.balancing.lower.bound = 0.02
+	incremental.balancing.step.ratio = 0.2
+	intra.broker.goals = [com.linkedin.kafka.cruisecontrol.analyzer.goals.IntraBrokerDiskCapacityGoal, com.linkedin.kafka.cruisecontrol.analyzer.goals.IntraBrokerDiskUsageDistributionGoal]
+	invalid.replica.assignment.retry.timeout.ms = 300000
+	leader.network.inbound.weight.for.cpu.util = 0.7
+	leader.network.outbound.weight.for.cpu.util = 0.15
+	leader.replica.count.balance.threshold = 1.1
+	logdir.response.timeout.ms = 30000
+	max.allowed.extrapolations.per.broker = 5
+	max.allowed.extrapolations.per.partition = 5
+	max.capacity.balancing.delta.percentage = 0.0
+	max.replicas = 2147483647
+	max.volume.throughput.mb = 0
+	metadata.client.timeout.ms = 180000
+	metadata.ttl = 10000
+	metric.sampler.class = class io.confluent.cruisecontrol.metricsreporter.ConfluentTelemetryReporterSampler
+	metric.sampler.partition.assignor.class = class com.linkedin.kafka.cruisecontrol.monitor.sampling.DefaultMetricSamplerPartitionAssignor
+	metric.sampling.interval.ms = 180000
+	min.samples.per.broker.metrics.window = 1
+	min.samples.per.partition.metrics.window = 1
+	min.valid.partition.ratio = 0.95
+	network.in.max.bytes.per.second = 9223372036854775807
+	network.inbound.balance.threshold = 1.1
+	network.inbound.capacity.threshold = 0.8
+	network.inbound.low.utilization.threshold = 0.2
+	network.out.max.bytes.per.second = 9223372036854775807
+	network.outbound.balance.threshold = 1.1
+	network.outbound.capacity.threshold = 0.8
+	network.outbound.low.utilization.threshold = 0.2
+	num.broker.metrics.windows = 20
+	num.cached.recent.anomaly.states = 10
+	num.concurrent.intra.broker.partition.movements = 2
+	num.concurrent.leader.movements = 1000
+	num.concurrent.partition.movements.per.broker = 5
+	num.metric.fetchers = 1
+	num.partition.metrics.windows = 6
+	partition.metric.sample.aggregator.completeness.cache.size = 5
+	partition.metric.sample.store.topic = _confluent_balancer_partition_samples
+	partition.metrics.window.ms = 360000
+	plan.computation.retry.timeout.ms = 3600000
+	producer.in.max.bytes.per.second = 9223372036854775807
+	producer.inbound.capacity.threshold = 0.9
+	read.throughput.multiplier = 1.0
+	receive.buffer.bytes = 32768
+	reconnect.backoff.ms = 50
+	removal.history.retention.time.ms = 86400000
+	replica.count.balance.threshold = 1.1
+	replica.movement.strategies = [com.linkedin.kafka.cruisecontrol.executor.strategy.PostponeUrpReplicaMovementStrategy, com.linkedin.kafka.cruisecontrol.executor.strategy.PrioritizeLargeReplicaMovementStrategy, com.linkedin.kafka.cruisecontrol.executor.strategy.PrioritizeSmallReplicaMovementStrategy, com.linkedin.kafka.cruisecontrol.executor.strategy.BaseReplicaMovementStrategy]
+	request.cpu.contribution.weight = 0.8
+	request.timeout.ms = 30000
+	resource.utilization.detector.enabled = false
+	resource.utilization.detector.interval.ms = 60000
+	sampling.allow.cpu.capacity.estimation = true
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	self.healing.broker.failure.enabled = true
+	self.healing.goal.violation.enabled = false
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	startup.retry.delay.minutes = 5
+	startup.retry.max.hours = 2
+	static.throttle.rate.override.enabled = false
+	throttle.bytes.per.second = 10485760
+	topic.partition.maximum.movements = 5
+	topic.partition.movement.expiration.ms = 3600000
+	topic.partition.suspension.ms = 10800000
+	topic.replica.count.balance.threshold = 3.0
+	topics.excluded.from.partition.movement = 
+	write.throughput.multiplier = 1.0
+	zookeeper.connect = localhost:2181
+	zookeeper.security.enabled = false
+ (com.linkedin.kafka.cruisecontrol.config.KafkaCruiseControlConfig)
+[2023-07-22 22:09:49,337] INFO Starting anomaly detector. (com.linkedin.kafka.cruisecontrol.detector.AnomalyDetector)
+[2023-07-22 22:09:49,347] INFO [SBK_BrokerFailureDetector]: Starting (com.linkedin.kafka.cruisecontrol.detector.BrokerFailureDetector)
+[2023-07-22 22:09:49,355] INFO Starting anomaly handler (com.linkedin.kafka.cruisecontrol.detector.AnomalyDetector)
+[2023-07-22 22:09:49,355] INFO Alive brokers: [0], failed brokers: [] (com.linkedin.kafka.cruisecontrol.detector.BrokerFailureDetector)
+[2023-07-22 22:09:49,355] INFO Updated list of failed broker: {} (com.linkedin.kafka.cruisecontrol.detector.BrokerFailureDetector)
+[2023-07-22 22:09:49,355] INFO Kafka Cruise Control started. (com.linkedin.kafka.cruisecontrol.KafkaCruiseControl)
+[2023-07-22 22:09:49,362] INFO No pending DataBalancer operations found at startup. (io.confluent.databalancer.ConfluentDataBalanceEngine)
+[2023-07-22 22:09:49,368] INFO Balancer Status state for brokers [0] transitioned from STARTING to RUNNING due to event CRUISE_CONTROL_INITIALIZATION_COMPLETED. (io.confluent.databalancer.operation.StateMachine)
+[2023-07-22 22:09:49,368] INFO DataBalancer: Scheduling DataBalanceEngine auto-heal update (setting to false) (io.confluent.databalancer.ConfluentDataBalanceEngine)
+[2023-07-22 22:09:49,368] INFO DataBalancer: DataBalanceEngine started (io.confluent.databalancer.ConfluentDataBalanceEngine)
+[2023-07-22 22:09:49,368] INFO Databalancer: Updating auto-heal mode to (false) (io.confluent.databalancer.ConfluentDataBalanceEngine)
+[2023-07-22 22:09:49,368] INFO Changing GOAL_VIOLATION anomaly self-healing actions to false (io.confluent.databalancer.ConfluentDataBalanceEngine)
+[2023-07-22 22:09:49,373] INFO Goal violation self-healing left disabled (no change) (com.linkedin.kafka.cruisecontrol.KafkaCruiseControl)
+[2023-07-22 22:09:49,530] INFO Generated 121 replica metrics samples, 121 partition metric samples and 1 broker metric samples from timestamp 1690038459248 to timestamp 1690038585713. (com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor)
+[2023-07-22 22:09:49,530] INFO REPLICA Aggregator rolled out 1 new windows, reset 7 windows, current window range [1690036560000, 1690038720000], abandon 0 samples. (com.linkedin.cruisecontrol.monitor.sampling.aggregator.MetricSampleAggregator)
+[2023-07-22 22:09:49,535] INFO PARTITION Aggregator rolled out 1 new windows, reset 7 windows, current window range [1690036560000, 1690038720000], abandon 0 samples. (com.linkedin.cruisecontrol.monitor.sampling.aggregator.MetricSampleAggregator)
+[2023-07-22 22:10:26,378] INFO Skipping goal violation detection due to previous new broker change (com.linkedin.kafka.cruisecontrol.detector.GoalViolationDetector)
+[2023-07-22 22:11:26,378] INFO Skipping goal violation detection due to previous new broker change (com.linkedin.kafka.cruisecontrol.detector.GoalViolationDetector)
+[2023-07-22 22:12:26,380] INFO Skipping goal violation detection due to previous new broker change (com.linkedin.kafka.cruisecontrol.detector.GoalViolationDetector)
+[2023-07-22 22:12:49,371] INFO Generated 121 replica metrics samples, 121 partition metric samples and 1 broker metric samples from timestamp 1690038639248 to timestamp 1690038759271. (com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor)
+[2023-07-22 22:12:49,371] INFO REPLICA Aggregator rolled out 1 new windows, reset 1 windows, current window range [1690036920000, 1690039080000], abandon 0 samples. (com.linkedin.cruisecontrol.monitor.sampling.aggregator.MetricSampleAggregator)
+[2023-07-22 22:12:49,371] INFO PARTITION Aggregator rolled out 1 new windows, reset 1 windows, current window range [1690036920000, 1690039080000], abandon 0 samples. (com.linkedin.cruisecontrol.monitor.sampling.aggregator.MetricSampleAggregator)
+[2023-07-22 22:13:26,381] INFO Skipping goal violation detection due to previous new broker change (com.linkedin.kafka.cruisecontrol.detector.GoalViolationDetector)
+[2023-07-22 22:14:26,415] INFO Skipping goal violation detection due to previous new broker change (com.linkedin.kafka.cruisecontrol.detector.GoalViolationDetector)
+[2023-07-22 22:15:26,380] INFO Skipping goal violation detection due to previous new broker change (com.linkedin.kafka.cruisecontrol.detector.GoalViolationDetector)
+[2023-07-22 22:15:49,484] INFO Generated 121 replica metrics samples, 121 partition metric samples and 1 broker metric samples from timestamp 1690038819265 to timestamp 1690038939322. (com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor)
+[2023-07-22 22:16:26,379] INFO Skipping goal violation detection due to previous new broker change (com.linkedin.kafka.cruisecontrol.detector.GoalViolationDetector)
+[2023-07-22 22:17:26,379] INFO Skipping goal violation detection due to previous new broker change (com.linkedin.kafka.cruisecontrol.detector.GoalViolationDetector)
+[2023-07-22 22:18:26,378] INFO Skipping goal violation detection due to previous new broker change (com.linkedin.kafka.cruisecontrol.detector.GoalViolationDetector)
+[2023-07-22 22:18:49,397] INFO Generated 121 replica metrics samples, 121 partition metric samples and 1 broker metric samples from timestamp 1690038999247 to timestamp 1690039119264. (com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor)
+[2023-07-22 22:18:49,397] INFO REPLICA Aggregator rolled out 1 new windows, reset 1 windows, current window range [1690037280000, 1690039440000], abandon 0 samples. (com.linkedin.cruisecontrol.monitor.sampling.aggregator.MetricSampleAggregator)
+[2023-07-22 22:18:49,397] INFO PARTITION Aggregator rolled out 1 new windows, reset 1 windows, current window range [1690037280000, 1690039440000], abandon 0 samples. (com.linkedin.cruisecontrol.monitor.sampling.aggregator.MetricSampleAggregator)
+[2023-07-22 22:19:26,392] INFO Skipping goal violation detection due to previous new broker change (com.linkedin.kafka.cruisecontrol.detector.GoalViolationDetector)
+[2023-07-22 22:20:26,378] INFO Skipping goal violation detection due to previous new broker change (com.linkedin.kafka.cruisecontrol.detector.GoalViolationDetector)
+[2023-07-22 22:21:26,378] INFO Skipping goal violation detection due to previous new broker change (com.linkedin.kafka.cruisecontrol.detector.GoalViolationDetector)
+[2023-07-22 22:21:49,344] INFO Generated 121 replica metrics samples, 121 partition metric samples and 1 broker metric samples from timestamp 1690039179265 to timestamp 1690039299257. (com.linkedin.kafka.cruisecontrol.monitor.sampling.CruiseControlMetricsProcessor)
+[2023-07-22 22:22:02,004] INFO Scheduling SBC Resignation (io.confluent.databalancer.SbcDataBalanceManager)
+[2023-07-22 22:22:02,004] INFO Handling event SbcResignationEvent-6 (io.confluent.databalancer.event.SbcEvent)
+[2023-07-22 22:22:02,004] INFO SBC Resignation initiated. (io.confluent.databalancer.event.SbcEvent)
+[2023-07-22 22:22:02,005] INFO DataBalancer: Scheduling DataBalanceEngine Shutdown due to CONTROLLER_FAILS_OVER. (io.confluent.databalancer.ConfluentDataBalanceEngine)
+[2023-07-22 22:22:02,010] INFO Databalancer: Shutting down DataBalanceEngine on receiving balancer event CONTROLLER_FAILS_OVER (io.confluent.databalancer.ConfluentDataBalanceEngine)
+[2023-07-22 22:22:02,010] INFO DataBalancer: Commencing DataBalanceEngine Shutdown due to CONTROLLER_FAILS_OVER (io.confluent.databalancer.ConfluentDataBalanceEngine)
+[2023-07-22 22:22:02,012] INFO The executor was requested to stop the ongoing proposal execution and cancel the existing reassignments. Reason: DataBalanceEngine Shutdown due to CONTROLLER_FAILS_OVER (com.linkedin.kafka.cruisecontrol.executor.Executor)
+[2023-07-22 22:22:02,012] INFO Shutting down Kafka Cruise Control... (com.linkedin.kafka.cruisecontrol.KafkaCruiseControl)
+[2023-07-22 22:22:02,012] INFO Thread SBK_SuspendedTopicPartitionsCleaner-0 exited (io.confluent.cruisecontrol.analyzer.history.GoalOptimizationHistory)
+[2023-07-22 22:22:02,014] INFO Thread SBK_TopicPartitionMovementsCleaner-0 exited (io.confluent.cruisecontrol.analyzer.history.GoalOptimizationHistory)
+[2023-07-22 22:22:02,015] ERROR Registering EvenClusterLoadEvent STOPPED with exception org.apache.kafka.common.errors.BalancerOperationFailedException. (io.confluent.databalancer.operation.EvenClusterLoadStateManager)
+org.apache.kafka.common.errors.BalancerOperationFailedException: Self healing stopped due to balancer shutting down.
+[2023-07-22 22:22:02,015] INFO Shutting down StateMachineProcessor event loop. (com.linkedin.kafka.cruisecontrol.statemachine.StateMachineProcessor)
+[2023-07-22 22:22:02,016] INFO Handling event SbcShutdownEvent-7 (io.confluent.databalancer.event.SbcEvent)
+[2023-07-22 22:22:02,016] INFO SBC shutdown initiated. (io.confluent.databalancer.event.SbcEvent)

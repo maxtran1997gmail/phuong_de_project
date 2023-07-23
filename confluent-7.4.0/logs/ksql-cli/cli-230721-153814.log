@@ -1,0 +1,1 @@
+[2023-07-21 15:43:16,943] ERROR Could not determine output schema for query due to error: Cannot add stream 'TARGET_AVRO': A stream with the same name already exists (io.confluent.ksql.cli.console.Console:349)

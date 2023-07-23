@@ -1,0 +1,196 @@
+[2023-07-21 14:39:14,898] ERROR An error occurred while running a command. Error = line 1:1: Syntax error at line 1:1 (io.confluent.ksql.cli.Cli:320)
+io.confluent.ksql.parser.exception.ParseFailedException: line 1:1: Syntax error at line 1:1
+	at io.confluent.ksql.parser.DefaultKsqlParser.parse(DefaultKsqlParser.java:56)
+	at io.confluent.ksql.cli.Cli.handleStatements(Cli.java:482)
+	at io.confluent.ksql.cli.Cli.handleLine(Cli.java:423)
+	at io.confluent.ksql.cli.Cli.runInteractively(Cli.java:314)
+	at io.confluent.ksql.Ksql.run(Ksql.java:134)
+	at io.confluent.ksql.Ksql.main(Ksql.java:79)
+Caused by: io.confluent.ksql.parser.ParsingException: line 1:1: Syntax error at line 1:1
+	at io.confluent.ksql.parser.SyntaxErrorValidator.syntaxError(SyntaxErrorValidator.java:162)
+	at org.antlr.v4.runtime.ProxyErrorListener.syntaxError(ProxyErrorListener.java:41)
+	at org.antlr.v4.runtime.Parser.notifyErrorListeners(Parser.java:544)
+	at org.antlr.v4.runtime.DefaultErrorStrategy.reportInputMismatch(DefaultErrorStrategy.java:327)
+	at org.antlr.v4.runtime.DefaultErrorStrategy.reportError(DefaultErrorStrategy.java:139)
+	at io.confluent.ksql.parser.SqlBaseParser.statements(SqlBaseParser.java:253)
+	at io.confluent.ksql.parser.DefaultKsqlParser.getParseTree(DefaultKsqlParser.java:121)
+	at io.confluent.ksql.parser.DefaultKsqlParser.parse(DefaultKsqlParser.java:45)
+	... 5 more
+[2023-07-21 14:39:14,903] ERROR io.confluent.ksql.parser.exception.ParseFailedException: line 1:1: Syntax error at line 1:1 (io.confluent.ksql.cli.console.Console:349)
+[2023-07-21 14:39:50,257] ERROR An error occurred while running a command. Error = line 1:18: Syntax error at line 1:18 (io.confluent.ksql.cli.Cli:320)
+io.confluent.ksql.parser.exception.ParseFailedException: line 1:18: Syntax error at line 1:18
+	at io.confluent.ksql.parser.DefaultKsqlParser.parse(DefaultKsqlParser.java:56)
+	at io.confluent.ksql.cli.Cli.handleStatements(Cli.java:482)
+	at io.confluent.ksql.cli.Cli.handleLine(Cli.java:423)
+	at io.confluent.ksql.cli.Cli.runInteractively(Cli.java:314)
+	at io.confluent.ksql.Ksql.run(Ksql.java:134)
+	at io.confluent.ksql.Ksql.main(Ksql.java:79)
+Caused by: io.confluent.ksql.parser.ParsingException: line 1:18: Syntax error at line 1:18
+	at io.confluent.ksql.parser.SyntaxErrorValidator.syntaxError(SyntaxErrorValidator.java:162)
+	at org.antlr.v4.runtime.ProxyErrorListener.syntaxError(ProxyErrorListener.java:41)
+	at org.antlr.v4.runtime.Parser.notifyErrorListeners(Parser.java:544)
+	at org.antlr.v4.runtime.DefaultErrorStrategy.reportInputMismatch(DefaultErrorStrategy.java:327)
+	at org.antlr.v4.runtime.DefaultErrorStrategy.reportError(DefaultErrorStrategy.java:139)
+	at io.confluent.ksql.parser.SqlBaseParser.singleStatement(SqlBaseParser.java:384)
+	at io.confluent.ksql.parser.SqlBaseParser.statements(SqlBaseParser.java:240)
+	at io.confluent.ksql.parser.DefaultKsqlParser.getParseTree(DefaultKsqlParser.java:121)
+	at io.confluent.ksql.parser.DefaultKsqlParser.parse(DefaultKsqlParser.java:45)
+	... 5 more
+[2023-07-21 14:39:50,257] ERROR io.confluent.ksql.parser.exception.ParseFailedException: line 1:18: Syntax error at line 1:18 (io.confluent.ksql.cli.console.Console:349)
+[2023-07-21 14:40:01,716] ERROR An error occurred while running a command. Error = line 1:19: Syntax error at line 1:19 (io.confluent.ksql.cli.Cli:320)
+io.confluent.ksql.parser.exception.ParseFailedException: line 1:19: Syntax error at line 1:19
+	at io.confluent.ksql.parser.DefaultKsqlParser.parse(DefaultKsqlParser.java:56)
+	at io.confluent.ksql.cli.Cli.handleStatements(Cli.java:482)
+	at io.confluent.ksql.cli.Cli.handleLine(Cli.java:423)
+	at io.confluent.ksql.cli.Cli.runInteractively(Cli.java:314)
+	at io.confluent.ksql.Ksql.run(Ksql.java:134)
+	at io.confluent.ksql.Ksql.main(Ksql.java:79)
+Caused by: io.confluent.ksql.parser.ParsingException: line 1:19: Syntax error at line 1:19
+	at io.confluent.ksql.parser.SyntaxErrorValidator.syntaxError(SyntaxErrorValidator.java:162)
+	at org.antlr.v4.runtime.ProxyErrorListener.syntaxError(ProxyErrorListener.java:41)
+	at org.antlr.v4.runtime.Parser.notifyErrorListeners(Parser.java:544)
+	at org.antlr.v4.runtime.DefaultErrorStrategy.reportInputMismatch(DefaultErrorStrategy.java:327)
+	at org.antlr.v4.runtime.DefaultErrorStrategy.reportError(DefaultErrorStrategy.java:139)
+	at io.confluent.ksql.parser.SqlBaseParser.singleStatement(SqlBaseParser.java:384)
+	at io.confluent.ksql.parser.SqlBaseParser.statements(SqlBaseParser.java:240)
+	at io.confluent.ksql.parser.DefaultKsqlParser.getParseTree(DefaultKsqlParser.java:121)
+	at io.confluent.ksql.parser.DefaultKsqlParser.parse(DefaultKsqlParser.java:45)
+	... 5 more
+[2023-07-21 14:40:01,716] ERROR io.confluent.ksql.parser.exception.ParseFailedException: line 1:19: Syntax error at line 1:19 (io.confluent.ksql.cli.console.Console:349)
+[2023-07-21 14:40:05,392] ERROR Exception while preparing statement: SYS does not exist. (io.confluent.ksql.cli.console.Console:349)
+[2023-07-21 14:41:48,123] ERROR Could not register schema for topic: Could not register schema for topic: Connection refused (Connection refused) (io.confluent.ksql.cli.console.Console:349)
+[2023-07-21 14:47:26,287] ERROR Could not register schema for topic: Could not register schema for topic: Connection refused (Connection refused) (io.confluent.ksql.cli.console.Console:349)
+[2023-07-21 14:57:05,982] ERROR Exception while preparing statement: BTC_AVRO does not exist. (io.confluent.ksql.cli.console.Console:349)
+[2023-07-21 14:57:34,476] ERROR Exception while preparing statement: BTC does not exist. (io.confluent.ksql.cli.console.Console:349)
+[2023-07-21 15:00:52,304] ERROR Could not find STREAM/TABLE 'MYDATA' in the Metastore (io.confluent.ksql.cli.console.Console:349)
+[2023-07-21 15:00:59,936] ERROR Could not find STREAM/TABLE 'BTC' in the Metastore (io.confluent.ksql.cli.console.Console:349)
+[2023-07-21 15:01:55,686] ERROR Schema for message values on topic 'BTC[F' does not exist in the Schema Registry.
+Subject: BTC[F-value
+Possible causes include:
+- The topic itself does not exist
+	-> Use SHOW TOPICS; to check
+- Messages on the topic are not serialized using a format Schema Registry supports
+	-> Use PRINT 'BTC[F' FROM BEGINNING; to verify
+- Messages on the topic have not been serialized using a Confluent Schema Registry supported serializer
+	-> See https://docs.confluent.io/current/schema-registry/docs/serializer-formatter.html
+- The schema is registered on a different instance of the Schema Registry
+	-> Use the REST API to list available subjects	https://docs.confluent.io/current/schema-registry/docs/api.html#get--subjects
+- You do not have permissions to access the Schema Registry.
+	-> See https://docs.confluent.io/current/schema-registry/docs/security.html (io.confluent.ksql.cli.console.Console:349)
+[2023-07-21 15:01:57,513] ERROR Schema for message values on topic 'BTC[F' does not exist in the Schema Registry.
+Subject: BTC[F-value
+Possible causes include:
+- The topic itself does not exist
+	-> Use SHOW TOPICS; to check
+- Messages on the topic are not serialized using a format Schema Registry supports
+	-> Use PRINT 'BTC[F' FROM BEGINNING; to verify
+- Messages on the topic have not been serialized using a Confluent Schema Registry supported serializer
+	-> See https://docs.confluent.io/current/schema-registry/docs/serializer-formatter.html
+- The schema is registered on a different instance of the Schema Registry
+	-> Use the REST API to list available subjects	https://docs.confluent.io/current/schema-registry/docs/api.html#get--subjects
+- You do not have permissions to access the Schema Registry.
+	-> See https://docs.confluent.io/current/schema-registry/docs/security.html (io.confluent.ksql.cli.console.Console:349)
+[2023-07-21 15:02:13,666] ERROR Schema for message values on topic 'BTC' does not exist in the Schema Registry.
+Subject: BTC-value
+Possible causes include:
+- The topic itself does not exist
+	-> Use SHOW TOPICS; to check
+- Messages on the topic are not serialized using a format Schema Registry supports
+	-> Use PRINT 'BTC' FROM BEGINNING; to verify
+- Messages on the topic have not been serialized using a Confluent Schema Registry supported serializer
+	-> See https://docs.confluent.io/current/schema-registry/docs/serializer-formatter.html
+- The schema is registered on a different instance of the Schema Registry
+	-> Use the REST API to list available subjects	https://docs.confluent.io/current/schema-registry/docs/api.html#get--subjects
+- You do not have permissions to access the Schema Registry.
+	-> See https://docs.confluent.io/current/schema-registry/docs/security.html (io.confluent.ksql.cli.console.Console:349)
+[2023-07-21 15:04:25,999] ERROR Cannot add stream 'SOURCE': A stream with the same name already exists (io.confluent.ksql.cli.console.Console:349)
+[2023-07-21 15:04:37,489] ERROR An error occurred while running a command. Error = line 1:1: Syntax error at line 1:1 (io.confluent.ksql.cli.Cli:320)
+io.confluent.ksql.parser.exception.ParseFailedException: line 1:1: Syntax error at line 1:1
+	at io.confluent.ksql.parser.DefaultKsqlParser.parse(DefaultKsqlParser.java:56)
+	at io.confluent.ksql.cli.Cli.handleStatements(Cli.java:482)
+	at io.confluent.ksql.cli.Cli.handleLine(Cli.java:423)
+	at io.confluent.ksql.cli.Cli.runInteractively(Cli.java:314)
+	at io.confluent.ksql.Ksql.run(Ksql.java:134)
+	at io.confluent.ksql.Ksql.main(Ksql.java:79)
+Caused by: io.confluent.ksql.parser.ParsingException: line 1:1: Syntax error at line 1:1
+	at io.confluent.ksql.parser.SyntaxErrorValidator.syntaxError(SyntaxErrorValidator.java:162)
+	at org.antlr.v4.runtime.ProxyErrorListener.syntaxError(ProxyErrorListener.java:41)
+	at org.antlr.v4.runtime.Parser.notifyErrorListeners(Parser.java:544)
+	at org.antlr.v4.runtime.DefaultErrorStrategy.reportInputMismatch(DefaultErrorStrategy.java:327)
+	at org.antlr.v4.runtime.DefaultErrorStrategy.reportError(DefaultErrorStrategy.java:139)
+	at io.confluent.ksql.parser.SqlBaseParser.statements(SqlBaseParser.java:253)
+	at io.confluent.ksql.parser.DefaultKsqlParser.getParseTree(DefaultKsqlParser.java:121)
+	at io.confluent.ksql.parser.DefaultKsqlParser.parse(DefaultKsqlParser.java:45)
+	... 5 more
+[2023-07-21 15:04:37,489] ERROR io.confluent.ksql.parser.exception.ParseFailedException: line 1:1: Syntax error at line 1:1 (io.confluent.ksql.cli.console.Console:349)
+[2023-07-21 15:05:04,867] ERROR An error occurred while running a command. Error = line 1:6: Syntax error at line 1:6 (io.confluent.ksql.cli.Cli:320)
+io.confluent.ksql.parser.exception.ParseFailedException: line 1:6: Syntax error at line 1:6
+	at io.confluent.ksql.parser.DefaultKsqlParser.parse(DefaultKsqlParser.java:56)
+	at io.confluent.ksql.cli.Cli.handleStatements(Cli.java:482)
+	at io.confluent.ksql.cli.Cli.handleLine(Cli.java:423)
+	at io.confluent.ksql.cli.Cli.runInteractively(Cli.java:314)
+	at io.confluent.ksql.Ksql.run(Ksql.java:134)
+	at io.confluent.ksql.Ksql.main(Ksql.java:79)
+Caused by: io.confluent.ksql.parser.ParsingException: line 1:6: Syntax error at line 1:6
+	at io.confluent.ksql.parser.SyntaxErrorValidator.syntaxError(SyntaxErrorValidator.java:162)
+	at org.antlr.v4.runtime.ProxyErrorListener.syntaxError(ProxyErrorListener.java:41)
+	at org.antlr.v4.runtime.Parser.notifyErrorListeners(Parser.java:544)
+	at org.antlr.v4.runtime.DefaultErrorStrategy.reportNoViableAlternative(DefaultErrorStrategy.java:310)
+	at org.antlr.v4.runtime.DefaultErrorStrategy.reportError(DefaultErrorStrategy.java:136)
+	at io.confluent.ksql.parser.SqlBaseParser.statement(SqlBaseParser.java:2526)
+	at io.confluent.ksql.parser.SqlBaseParser.singleStatement(SqlBaseParser.java:377)
+	at io.confluent.ksql.parser.SqlBaseParser.statements(SqlBaseParser.java:240)
+	at io.confluent.ksql.parser.DefaultKsqlParser.getParseTree(DefaultKsqlParser.java:121)
+	at io.confluent.ksql.parser.DefaultKsqlParser.parse(DefaultKsqlParser.java:45)
+	... 5 more
+[2023-07-21 15:05:04,868] ERROR io.confluent.ksql.parser.exception.ParseFailedException: line 1:6: Syntax error at line 1:6 (io.confluent.ksql.cli.console.Console:349)
+[2023-07-21 15:05:10,587] ERROR An error occurred while running a command. Error = line 1:6: Syntax error at line 1:6 (io.confluent.ksql.cli.Cli:320)
+io.confluent.ksql.parser.exception.ParseFailedException: line 1:6: Syntax error at line 1:6
+	at io.confluent.ksql.parser.DefaultKsqlParser.parse(DefaultKsqlParser.java:56)
+	at io.confluent.ksql.cli.Cli.handleStatements(Cli.java:482)
+	at io.confluent.ksql.cli.Cli.handleLine(Cli.java:423)
+	at io.confluent.ksql.cli.Cli.runInteractively(Cli.java:314)
+	at io.confluent.ksql.Ksql.run(Ksql.java:134)
+	at io.confluent.ksql.Ksql.main(Ksql.java:79)
+Caused by: io.confluent.ksql.parser.ParsingException: line 1:6: Syntax error at line 1:6
+	at io.confluent.ksql.parser.SyntaxErrorValidator.syntaxError(SyntaxErrorValidator.java:162)
+	at org.antlr.v4.runtime.ProxyErrorListener.syntaxError(ProxyErrorListener.java:41)
+	at org.antlr.v4.runtime.Parser.notifyErrorListeners(Parser.java:544)
+	at org.antlr.v4.runtime.DefaultErrorStrategy.reportNoViableAlternative(DefaultErrorStrategy.java:310)
+	at org.antlr.v4.runtime.DefaultErrorStrategy.reportError(DefaultErrorStrategy.java:136)
+	at io.confluent.ksql.parser.SqlBaseParser.statement(SqlBaseParser.java:2526)
+	at io.confluent.ksql.parser.SqlBaseParser.singleStatement(SqlBaseParser.java:377)
+	at io.confluent.ksql.parser.SqlBaseParser.statements(SqlBaseParser.java:240)
+	at io.confluent.ksql.parser.DefaultKsqlParser.getParseTree(DefaultKsqlParser.java:121)
+	at io.confluent.ksql.parser.DefaultKsqlParser.parse(DefaultKsqlParser.java:45)
+	... 5 more
+[2023-07-21 15:05:10,588] ERROR io.confluent.ksql.parser.exception.ParseFailedException: line 1:6: Syntax error at line 1:6 (io.confluent.ksql.cli.console.Console:349)
+[2023-07-21 15:05:54,923] ERROR Cannot drop SOURCE.
+The following streams and/or tables read from this source: [TARGET_AVRO].
+You need to drop them before dropping SOURCE. (io.confluent.ksql.cli.console.Console:349)
+[2023-07-21 15:05:59,961] ERROR Cannot drop SOURCE.
+The following streams and/or tables read from this source: [TARGET_AVRO].
+You need to drop them before dropping SOURCE. (io.confluent.ksql.cli.console.Console:349)
+[2023-07-21 15:07:44,194] ERROR Could not register schema for topic: Could not register schema for topic: Schema being registered is incompatible with an earlier schema for subject "BTC_Avro-value", details: [{errorType:'MISSING_UNION_BRANCH', description:'The new schema is missing a type inside a union field at path '/fields/0/type/1' in the old schema', additionalInfo:'reader union lacking writer type: INT'}, {oldSchemaVersion: 1}, {oldSchema: '{"type":"record","name":"KsqlDataSourceSchema","namespace":"io.confluent.ksql.avro_schemas","fields":[{"name":"PRICE","type":["null","int"],"default":null},{"name":"UPDATED_AT","type":["null","string"],"default":null}],"connect.name":"io.confluent.ksql.avro_schemas.KsqlDataSourceSchema"}'}, {compatibility: 'BACKWARD'}]; error code: 409 (io.confluent.ksql.cli.console.Console:349)
+[2023-07-21 15:11:51,323] ERROR An error occurred while running a command. Error = line 1:1: Syntax error at line 1:1 (io.confluent.ksql.cli.Cli:320)
+io.confluent.ksql.parser.exception.ParseFailedException: line 1:1: Syntax error at line 1:1
+	at io.confluent.ksql.parser.DefaultKsqlParser.parse(DefaultKsqlParser.java:56)
+	at io.confluent.ksql.cli.Cli.handleStatements(Cli.java:482)
+	at io.confluent.ksql.cli.Cli.handleLine(Cli.java:423)
+	at io.confluent.ksql.cli.Cli.runInteractively(Cli.java:314)
+	at io.confluent.ksql.Ksql.run(Ksql.java:134)
+	at io.confluent.ksql.Ksql.main(Ksql.java:79)
+Caused by: io.confluent.ksql.parser.ParsingException: line 1:1: Syntax error at line 1:1
+	at io.confluent.ksql.parser.SyntaxErrorValidator.syntaxError(SyntaxErrorValidator.java:162)
+	at org.antlr.v4.runtime.ProxyErrorListener.syntaxError(ProxyErrorListener.java:41)
+	at org.antlr.v4.runtime.Parser.notifyErrorListeners(Parser.java:544)
+	at org.antlr.v4.runtime.DefaultErrorStrategy.reportInputMismatch(DefaultErrorStrategy.java:327)
+	at org.antlr.v4.runtime.DefaultErrorStrategy.reportError(DefaultErrorStrategy.java:139)
+	at io.confluent.ksql.parser.SqlBaseParser.statements(SqlBaseParser.java:253)
+	at io.confluent.ksql.parser.DefaultKsqlParser.getParseTree(DefaultKsqlParser.java:121)
+	at io.confluent.ksql.parser.DefaultKsqlParser.parse(DefaultKsqlParser.java:45)
+	... 5 more
+[2023-07-21 15:11:51,324] ERROR io.confluent.ksql.parser.exception.ParseFailedException: line 1:1: Syntax error at line 1:1 (io.confluent.ksql.cli.console.Console:349)
+[2023-07-21 15:15:38,245] ERROR Could not register schema for topic: Could not register schema for topic: Schema being registered is incompatible with an earlier schema for subject "BTC_Avro-value", details: [{errorType:'MISSING_UNION_BRANCH', description:'The new schema is missing a type inside a union field at path '/fields/0/type/1' in the old schema', additionalInfo:'reader union lacking writer type: INT'}, {oldSchemaVersion: 1}, {oldSchema: '{"type":"record","name":"KsqlDataSourceSchema","namespace":"io.confluent.ksql.avro_schemas","fields":[{"name":"PRICE","type":["null","int"],"default":null},{"name":"UPDATED_AT","type":["null","string"],"default":null}],"connect.name":"io.confluent.ksql.avro_schemas.KsqlDataSourceSchema"}'}, {compatibility: 'BACKWARD'}]; error code: 409 (io.confluent.ksql.cli.console.Console:349)
+[2023-07-21 15:21:12,756] ERROR Could not register schema for topic: Could not register schema for topic: Schema being registered is incompatible with an earlier schema for subject "BTC_Avro-value", details: [{errorType:'MISSING_UNION_BRANCH', description:'The new schema is missing a type inside a union field at path '/fields/0/type/1' in the old schema', additionalInfo:'reader union lacking writer type: INT'}, {oldSchemaVersion: 1}, {oldSchema: '{"type":"record","name":"KsqlDataSourceSchema","namespace":"io.confluent.ksql.avro_schemas","fields":[{"name":"PRICE","type":["null","int"],"default":null},{"name":"UPDATED_AT","type":["null","string"],"default":null}],"connect.name":"io.confluent.ksql.avro_schemas.KsqlDataSourceSchema"}'}, {compatibility: 'BACKWARD'}]; error code: 409 (io.confluent.ksql.cli.console.Console:349)
+[2023-07-21 15:23:08,514] ERROR Could not register schema for topic: Could not register schema for topic: Schema being registered is incompatible with an earlier schema for subject "BTC_Avro-value", details: [{errorType:'MISSING_UNION_BRANCH', description:'The new schema is missing a type inside a union field at path '/fields/0/type/1' in the old schema', additionalInfo:'reader union lacking writer type: INT'}, {oldSchemaVersion: 1}, {oldSchema: '{"type":"record","name":"KsqlDataSourceSchema","namespace":"io.confluent.ksql.avro_schemas","fields":[{"name":"PRICE","type":["null","int"],"default":null},{"name":"UPDATED_AT","type":["null","string"],"default":null}],"connect.name":"io.confluent.ksql.avro_schemas.KsqlDataSourceSchema"}'}, {compatibility: 'BACKWARD'}]; error code: 409 (io.confluent.ksql.cli.console.Console:349)

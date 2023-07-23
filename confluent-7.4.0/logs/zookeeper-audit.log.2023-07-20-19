@@ -1,0 +1,24 @@
+2023-07-20 19:06:14,751 ERROR audit.Log4jAuditLogger: session=0x1000000ed140000	user=127.0.0.1	ip=127.0.0.1	operation=setData	znode=/config/topics/BTC1	result=failure
+2023-07-20 19:06:14,763 INFO audit.Log4jAuditLogger: session=0x1000000ed140000	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/config/topics/BTC1	znode_type=persistent	result=success
+2023-07-20 19:06:14,766 INFO audit.Log4jAuditLogger: session=0x1000000ed140000	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/brokers/topics/BTC1	znode_type=persistent	result=success
+2023-07-20 19:06:14,776 INFO audit.Log4jAuditLogger: session=0x1000000ed140000	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/brokers/topics/BTC1/partitions	znode_type=persistent	result=success
+2023-07-20 19:06:14,778 INFO audit.Log4jAuditLogger: session=0x1000000ed140000	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/brokers/topics/BTC1/partitions/0	znode_type=persistent	result=success
+2023-07-20 19:06:14,778 INFO audit.Log4jAuditLogger: session=0x1000000ed140000	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/brokers/topics/BTC1/partitions/1	znode_type=persistent	result=success
+2023-07-20 19:06:14,779 INFO audit.Log4jAuditLogger: session=0x1000000ed140000	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/brokers/topics/BTC1/partitions/2	znode_type=persistent	result=success
+2023-07-20 19:06:14,782 INFO audit.Log4jAuditLogger: session=0x1000000ed140000	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/brokers/topics/BTC1/partitions/0/state	znode_type=persistent	result=success
+2023-07-20 19:06:14,782 INFO audit.Log4jAuditLogger: session=0x1000000ed140000	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/brokers/topics/BTC1/partitions/1/state	znode_type=persistent	result=success
+2023-07-20 19:06:14,784 INFO audit.Log4jAuditLogger: session=0x1000000ed140000	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/brokers/topics/BTC1/partitions/2/state	znode_type=persistent	result=success
+2023-07-20 19:17:08,470 INFO audit.Log4jAuditLogger: session=0x1000000ed140000	user=127.0.0.1	ip=127.0.0.1	operation=create	znode=/admin/delete_topics/BTC1	znode_type=persistent	result=success
+2023-07-20 19:17:08,503 INFO audit.Log4jAuditLogger: session=0x1000000ed140000	user=127.0.0.1	ip=127.0.0.1	operation=setData	znode=/brokers/topics/BTC1/partitions/2/state	result=success
+2023-07-20 19:17:08,503 INFO audit.Log4jAuditLogger: session=0x1000000ed140000	user=127.0.0.1	ip=127.0.0.1	operation=setData	znode=/brokers/topics/BTC1/partitions/0/state	result=success
+2023-07-20 19:17:08,503 INFO audit.Log4jAuditLogger: session=0x1000000ed140000	user=127.0.0.1	ip=127.0.0.1	operation=setData	znode=/brokers/topics/BTC1/partitions/1/state	result=success
+2023-07-20 19:17:08,608 INFO audit.Log4jAuditLogger: session=0x1000000ed140000	user=127.0.0.1	ip=127.0.0.1	operation=delete	znode=/brokers/topics/BTC1/partitions/0/state	result=success
+2023-07-20 19:17:08,612 INFO audit.Log4jAuditLogger: session=0x1000000ed140000	user=127.0.0.1	ip=127.0.0.1	operation=delete	znode=/brokers/topics/BTC1/partitions/0	result=success
+2023-07-20 19:17:08,614 INFO audit.Log4jAuditLogger: session=0x1000000ed140000	user=127.0.0.1	ip=127.0.0.1	operation=delete	znode=/brokers/topics/BTC1/partitions/1/state	result=success
+2023-07-20 19:17:08,616 INFO audit.Log4jAuditLogger: session=0x1000000ed140000	user=127.0.0.1	ip=127.0.0.1	operation=delete	znode=/brokers/topics/BTC1/partitions/1	result=success
+2023-07-20 19:17:08,618 INFO audit.Log4jAuditLogger: session=0x1000000ed140000	user=127.0.0.1	ip=127.0.0.1	operation=delete	znode=/brokers/topics/BTC1/partitions/2/state	result=success
+2023-07-20 19:17:08,620 INFO audit.Log4jAuditLogger: session=0x1000000ed140000	user=127.0.0.1	ip=127.0.0.1	operation=delete	znode=/brokers/topics/BTC1/partitions/2	result=success
+2023-07-20 19:17:08,622 INFO audit.Log4jAuditLogger: session=0x1000000ed140000	user=127.0.0.1	ip=127.0.0.1	operation=delete	znode=/brokers/topics/BTC1/partitions	result=success
+2023-07-20 19:17:08,624 INFO audit.Log4jAuditLogger: session=0x1000000ed140000	user=127.0.0.1	ip=127.0.0.1	operation=delete	znode=/brokers/topics/BTC1	result=success
+2023-07-20 19:17:08,627 INFO audit.Log4jAuditLogger: session=0x1000000ed140000	user=127.0.0.1	ip=127.0.0.1	operation=delete	znode=/config/topics/BTC1	result=success
+2023-07-20 19:17:08,632 INFO audit.Log4jAuditLogger: session=0x1000000ed140000	user=127.0.0.1	ip=127.0.0.1	operation=delete	znode=/admin/delete_topics/BTC1	result=success

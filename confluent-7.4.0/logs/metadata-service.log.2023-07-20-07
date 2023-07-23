@@ -1,0 +1,87 @@
+[2023-07-20 07:20:22,740] INFO RestConfig values: 
+	access.control.allow.headers = 
+	access.control.allow.methods = 
+	access.control.allow.origin = 
+	access.control.skip.options = true
+	authentication.method = NONE
+	authentication.realm = 
+	authentication.roles = [*]
+	authentication.skip.paths = []
+	compression.enable = true
+	connector.connection.limit = 0
+	csrf.prevention.enable = false
+	csrf.prevention.token.endpoint = /csrf
+	csrf.prevention.token.expiration.minutes = 30
+	csrf.prevention.token.max.entries = 10000
+	debug = false
+	dos.filter.delay.ms = 100
+	dos.filter.enabled = false
+	dos.filter.insert.headers = true
+	dos.filter.ip.whitelist = []
+	dos.filter.managed.attr = false
+	dos.filter.max.idle.tracker.ms = 30000
+	dos.filter.max.requests.ms = 30000
+	dos.filter.max.requests.per.connection.per.sec = 25
+	dos.filter.max.requests.per.sec = 25
+	dos.filter.max.wait.ms = 50
+	dos.filter.throttle.ms = 30000
+	dos.filter.throttled.requests = 5
+	http2.enabled = true
+	idle.timeout.ms = 30000
+	listener.protocol.map = []
+	listeners = []
+	metric.reporters = []
+	metrics.jmx.prefix = rest-utils
+	metrics.num.samples = 2
+	metrics.sample.window.ms = 30000
+	metrics.tag.map = []
+	nosniff.prevention.enable = false
+	port = 8080
+	proxy.protocol.enabled = false
+	reject.options.request = false
+	request.logger.name = io.confluent.rest-utils.requests
+	request.queue.capacity = 2147483647
+	request.queue.capacity.growby = 64
+	request.queue.capacity.init = 128
+	resource.extension.classes = []
+	response.http.headers.config = 
+	response.mediatype.default = application/json
+	response.mediatype.preferred = [application/json]
+	rest.servlet.initializor.classes = []
+	server.connection.limit = 0
+	shutdown.graceful.ms = 1000
+	ssl.cipher.suites = []
+	ssl.client.auth = false
+	ssl.client.authentication = NONE
+	ssl.enabled.protocols = []
+	ssl.endpoint.identification.algorithm = null
+	ssl.key.password = [hidden]
+	ssl.keymanager.algorithm = 
+	ssl.keystore.location = 
+	ssl.keystore.password = [hidden]
+	ssl.keystore.reload = false
+	ssl.keystore.type = JKS
+	ssl.keystore.watch.location = 
+	ssl.protocol = TLS
+	ssl.provider = 
+	ssl.trustmanager.algorithm = 
+	ssl.truststore.location = 
+	ssl.truststore.password = [hidden]
+	ssl.truststore.type = JKS
+	suppress.stack.trace.response = true
+	thread.pool.max = 200
+	thread.pool.min = 8
+	websocket.path.prefix = /ws
+	websocket.servlet.initializor.classes = []
+ (io.confluent.rest.RestConfig)
+[2023-07-20 07:20:22,809] INFO MetadataServerConfig values: 
+	confluent.http.server.listeners = [http://0.0.0.0:8090]
+	confluent.metadata.server.advertised.listeners = null
+	confluent.metadata.server.enable = false
+	confluent.metadata.server.kraft.controller.enabled = false
+	confluent.metadata.server.listeners = null
+ (org.apache.kafka.server.http.MetadataServerConfig)
+[2023-07-20 07:20:22,884] INFO Initial capacity 128, increased by 64, maximum capacity 2147483647. (io.confluent.rest.ApplicationServer)
+[2023-07-20 07:20:22,999] INFO Adding listener with HTTP/2: NamedURI{uri=http://0.0.0.0:8090, name='null'} (io.confluent.rest.ApplicationServer)
+[2023-07-20 07:20:23,192] INFO Binding MetadataApiApplication to all listeners. (io.confluent.rest.Application)
+[2023-07-20 07:20:23,402] INFO Binding EmbeddedKafkaRestApplication to all listeners. (io.confluent.rest.Application)

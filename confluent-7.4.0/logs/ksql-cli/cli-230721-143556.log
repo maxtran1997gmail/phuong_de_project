@@ -1,0 +1,1 @@
+[2023-07-21 14:37:28,753] ERROR Cannot create topic 'mysql_users_avro' with format AVRO without configuring 'ksql.schema.registry.url' (io.confluent.ksql.cli.console.Console:349)
