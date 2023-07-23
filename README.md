@@ -28,7 +28,7 @@
 
 # Convert json data to avro data in kafka topics
 ### Create stream in ksql
-'''Run "CREATE STREAM source (
+---Run "CREATE STREAM source (
     job_id VARCHAR,
     publisher_id VARCHAR,
     campaign_id VARCHAR,
@@ -46,7 +46,7 @@
 ) WITH (
     KAFKA_TOPIC = 'json_data',
     VALUE_FORMAT = 'JSON'
-);"'''
+);"---
 
 ```Run "SET 'auto.offset.reset' = 'earliest';"```
 
